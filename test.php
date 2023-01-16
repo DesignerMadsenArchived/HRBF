@@ -2,15 +2,14 @@
     namespace IOJaegers\Hrbf;
     require_once './vendor/autoload.php';
 
-    use IOJaegers\Hrbf\StringOperator;
+    use IOJaegers\Hrbf\StringTransformer;
     use IOJaegers\Hrbf\globals\Configuration;
 
-    Configuration::setMultibyteAllowed(false );
+    Configuration::setMultibyteAllowed( false );
 
     try
     {
-
-        print(StringOperator::Lower("Test"));
+        print(StringTransformer::Lower("Test"));
     }
     catch (\ErrorException)
     {

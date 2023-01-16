@@ -5,19 +5,19 @@
     namespace IOJaegers\Hrbf;
 
     use IOJaegers\Hrbf\globals\Configuration;
+    use IOJaegers\Hrbf\types\StringAlgorithmType;
+
     use IOJaegers\Hrbf\stringAlgorithms\lowercase\MultiByteLowercase;
     use IOJaegers\Hrbf\stringAlgorithms\lowercase\SingleByteLowercase;
     use IOJaegers\Hrbf\stringAlgorithms\lowercase\TransformLowercase;
     use IOJaegers\Hrbf\stringAlgorithms\uppercase\MultiByteUppercase;
     use IOJaegers\Hrbf\stringAlgorithms\uppercase\SingleByteUppercase;
     use IOJaegers\Hrbf\stringAlgorithms\uppercase\TransformUppercase;
-    use IOJaegers\Hrbf\types\StringAlgorithmType;
-
 
     /**
      *
      */
-    final class StringOperator
+    final class StringTransformer
     {
         private static ?TransformUppercase $uppercase = null;
         private static ?TransformLowercase $lowercase = null;
