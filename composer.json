@@ -3,12 +3,15 @@
     "description": "Human Readable Basic Functions",
     "type": "library",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "IoJaegers\\Hrbf\\": "src/"
+    "autoload":
+    {
+        "psr-4":
+        {
+            "IOJaegers\\Hrbf\\": "src/"
         }
     },
-    "authors": [
+    "authors":
+    [
         {
             "name": "Kent vejrup Madsen",
             "email": "kent.vejrup.madsen@designermadsen.dk"
