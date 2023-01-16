@@ -9,6 +9,6 @@
      */
     interface TransformUppercase
     {
-
+        function transform( ?string $value ): ?string;
     }
 ?>
