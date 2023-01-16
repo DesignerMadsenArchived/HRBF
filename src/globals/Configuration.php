@@ -15,7 +15,7 @@
     {
         // Variables
         private static EncodingType $encoding = EncodingType::UTF8;
-        private static StringAlgorithmType $stringAlgorithm = StringAlgorithmType::Multibyte;
+        private static StringAlgorithmType $stringAlgorithm = StringAlgorithmType::SingleByte;
 
         private static bool $multibyteAllowed = false;
 
@@ -47,7 +47,7 @@
         /**
          * @param StringAlgorithmType $stringAlgorithm
          */
-        public static function setStringAlgorithm(StringAlgorithmType $stringAlgorithm): void
+        public static function setStringAlgorithm( StringAlgorithmType $stringAlgorithm ): void
         {
             self::$stringAlgorithm = $stringAlgorithm;
         }

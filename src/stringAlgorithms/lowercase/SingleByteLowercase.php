@@ -11,10 +11,10 @@
         implements TransformLowercase
     {
         /**
-         * @param string|null $value
-         * @return string|null
+         * @param string $value
+         * @return string
          */
-        public function transform( ?string $value ): ?string
+        public function transform( string $value ): string
         {
             return strtolower( $value );
         }

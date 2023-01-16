@@ -10,10 +10,9 @@
     class MultiByteUppercase
         implements TransformUppercase
     {
-        public function transform(?string $value): ?string
+        public function transform( string $value ): string
         {
-            // TODO: Implement transform() method.
-            return null;
+            return "";
         }
     }
 ?>

@@ -9,6 +9,6 @@
      */
     interface TransformLowercase
     {
-        function transform( ?string $value ): ?string;
+        function transform( string $value ): string;
     }
 ?>

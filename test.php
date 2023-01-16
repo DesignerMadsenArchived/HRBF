@@ -5,9 +5,17 @@
     use IOJaegers\Hrbf\StringOperator;
     use IOJaegers\Hrbf\globals\Configuration;
 
-    Configuration::setMultibyteAllowed(true );
+    Configuration::setMultibyteAllowed(false );
 
-    print(StringOperator::Upper("Test"));
+    try
+    {
+
+        print(StringOperator::Lower("Test"));
+    }
+    catch (\ErrorException)
+    {
+
+    }
 
     echo "\r\n";
 ?>
