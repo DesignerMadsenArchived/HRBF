@@ -4,6 +4,8 @@
      */
     namespace IOJaegers\Hrbf\stringAlgorithms\lowercase;
 
+    use IOJaegers\Hrbf\globals\Configuration;
+
     /**
      *
      */
@@ -11,9 +13,31 @@
         implements TransformLowercase
     {
 
-        public function transform(string $value): string
+        /**
+         * @param string $value
+         * @return string
+         * @throws \ErrorException
+         */
+        public function transform( string $value ): string
         {
-            return "";
+            if( Configuration::isMultibyteAllowed() )
+            {
+                return $this->default( $value );
+            }
+            else
+            {
+                throw new \ErrorException('error has occured');
+            }
+        }
+
+        /**
+         * @param string $value
+         * @return string
+         */
+        protected function default( string $value ): string
+        {
+            $encoding = mb_detect_encoding( $value );
+            return mb_strtolower( $value, $encoding );
         }
     }
 ?>

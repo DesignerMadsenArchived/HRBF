@@ -5,7 +5,7 @@
     namespace IOJaegers\Hrbf\stringAlgorithms\uppercase;
 
     /**
-     *
+     * @throws \ErrorException
      */
     interface TransformUppercase
     {

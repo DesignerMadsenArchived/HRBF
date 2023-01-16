@@ -4,17 +4,14 @@
 
     use IOJaegers\Hrbf\StringTransformer;
     use IOJaegers\Hrbf\globals\Configuration;
+    use IOJaegers\Hrbf\types\StringAlgorithmType;
 
-    Configuration::setMultibyteAllowed( false );
+    Configuration::setStringAlgorithm(StringAlgorithmType::Multibyte );
+    Configuration::setMultibyteAllowed(true);
 
-    try
-    {
-        print(StringTransformer::Lower("Test"));
-    }
-    catch (\ErrorException)
-    {
+    print(StringTransformer::Lower('LOWER'));
+    echo "\r\n";
 
-    }
-
+    print(StringTransformer::Upper("upper"));
     echo "\r\n";
 ?>
