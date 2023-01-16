@@ -1,16 +1,25 @@
 <?php
-    namespace IOJaegers\Hrbf;
+    /**
+     *
+     */
+    namespace IOJaegers\Hrbf\globals;
 
     use IOJaegers\Hrbf\types\EncodingType;
     use IOJaegers\Hrbf\types\StringAlgorithmType;
 
 
+    /**
+     *
+     */
     final class Configuration
     {
         // Variables
         private static EncodingType $encoding = EncodingType::UTF8;
         private static StringAlgorithmType $stringAlgorithm = StringAlgorithmType::Multibyte;
 
+        private static bool $multibyteAllowed = false;
+
+        // Accessors
         /**
          * @return EncodingType
          */
@@ -18,7 +27,6 @@
         {
             return self::$encoding;
         }
-
 
         /**
          * @param EncodingType $encoding
@@ -42,6 +50,22 @@
         public static function setStringAlgorithm(StringAlgorithmType $stringAlgorithm): void
         {
             self::$stringAlgorithm = $stringAlgorithm;
+        }
+
+        /**
+         * @return bool
+         */
+        public static function isMultibyteAllowed(): bool
+        {
+            return self::$multibyteAllowed;
+        }
+
+        /**
+         * @param bool $multibyteAllowed
+         */
+        public static function setMultibyteAllowed( bool $multibyteAllowed ): void
+        {
+            self::$multibyteAllowed = $multibyteAllowed;
         }
     }
 ?>
