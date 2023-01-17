@@ -18,6 +18,8 @@
         private static StringAlgorithmType $stringAlgorithm = StringAlgorithmType::SingleByte;
 
         private static bool $multibyteAllowed = false;
+        private static bool $multibyteAutoDetectEncoding = false;
+
 
         // Accessors
         /**
@@ -67,5 +69,22 @@
         {
             self::$multibyteAllowed = $multibyteAllowed;
         }
+
+        /**
+         * @return bool
+         */
+        public static function isMultibyteAutoDetectEncodingAllowed(): bool
+        {
+            return self::$multibyteAutoDetectEncoding;
+        }
+
+        /**
+         * @param bool $multibyteAutoDetectEncoding
+         */
+        public static function setMultibyteAutoDetectEncoding( bool $multibyteAutoDetectEncoding ): void
+        {
+            self::$multibyteAutoDetectEncoding = $multibyteAutoDetectEncoding;
+        }
+
     }
 ?>

@@ -165,7 +165,6 @@
         }
 
 
-
         /**
          * @param string|null $value
          * @return bool
@@ -174,6 +173,7 @@
         {
             return isset( $value );
         }
+
 
         /**
          * @return TransformUppercase
