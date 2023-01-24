@@ -1,5 +1,6 @@
 # MIT License
-Copyright (c) 2023 [IO Jægers, 41157089](https://datacvr.virk.dk/enhed/virksomhed/41157089)
+Copyright © 2023 
+ [IO Jægers, 41157089](https://datacvr.virk.dk/enhed/virksomhed/41157089)
 
  ---- ----
 Permission is hereby granted, free of charge,
