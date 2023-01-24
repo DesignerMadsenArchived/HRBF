@@ -2,14 +2,14 @@
     /**
      *
      */
-    namespace IoJaegers\Sitemap\Domain\TBM;
+	namespace IOJaegers\Hrbf\Math\Counters;
 
 
     /**
      *
      */
     class IntegerCounter
-        implements Counter
+        implements IntegerCounterInterface
     {
         /**
          * @param int $value
@@ -28,7 +28,7 @@
         const one = 1;
 		
         const zero = 0;
-
+		
 		
         // Accessor
         /**

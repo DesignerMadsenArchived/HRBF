@@ -2,14 +2,14 @@
     /**
      *
      */
-    namespace IoJaegers\Sitemap\Domain\TBM;
+	namespace IOJaegers\Hrbf\Math\Counters;
 
 
     /**
      *
      */
     class FloatCounter
-        implements Counter
+        implements FloatCounterInterface
     {
 		/**
 		 * @param float $value
