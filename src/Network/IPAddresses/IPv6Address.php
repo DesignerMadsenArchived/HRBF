@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-	namespace IoJaegers\Utilities\Objects;
+	namespace IoJaegers\Hrbf\Network\IPAddresses;
 	
 	/**
 	 *

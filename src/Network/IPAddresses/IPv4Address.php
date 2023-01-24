@@ -1,5 +1,5 @@
 <?php
-    namespace IoJaegers\Utilities\Objects;
+    namespace IoJaegers\Hrbf\Network\IPAddresses;
 
 
     class IPv4Address
