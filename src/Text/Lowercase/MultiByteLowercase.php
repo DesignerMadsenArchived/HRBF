@@ -13,13 +13,14 @@
     class MultiByteLowercase
         implements TransformLowercase
     {
-
         /**
          * @param string $value
          * @return string
          * @throws \ErrorException
          */
-        public function transform( string $value ): string
+        public function transform(
+			string $value
+		): string
         {
             if( Configuration::isMultibyteAllowed() )
             {
@@ -36,7 +37,9 @@
          * @param string $value
          * @return string
          */
-        protected function LowerFunction( string $value ): string
+        protected function LowerFunction(
+			string $value
+		): string
         {
             return mb_strtolower( $value, $this->default( $value ) );
         }
@@ -46,7 +49,9 @@
          * @param string $input
          * @return string
          */
-        protected function default( string $input ): string
+        protected function default(
+			string $input
+		): string
         {
             if( Configuration::isMultibyteAutoDetectEncodingAllowed() )
             {

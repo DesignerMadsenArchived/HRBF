@@ -19,7 +19,9 @@
          * @return string
          * @throws \ErrorException
          */
-        public function transform( string $value ): string
+        public function transform(
+			string $value
+		): string
         {
             if( Configuration::isMultibyteAllowed() )
             {
@@ -35,7 +37,9 @@
          * @param string $value
          * @return string
          */
-        protected function UpperFunction(string $value): string
+        protected function UpperFunction(
+			string $value
+		): string
         {
             return mb_strtoupper( $value, $this->default( $value ) );
         }
@@ -44,7 +48,9 @@
          * @param string $value
          * @return string
          */
-        protected function default( string $value ): string
+        protected function default(
+			string $value
+		): string
         {
             if( Configuration::isMultibyteAutoDetectEncodingAllowed() )
             {

@@ -25,13 +25,17 @@
 		 * @param mixed $withValue
 		 * @return void
 		 */
-		public function increaseByValue( mixed $withValue ): void;
+		public function increaseByValue(
+			mixed $withValue
+		): void;
 	
 		/**
 		 * @param mixed $withValue
 		 * @return void
 		 */
-		public function decreaseByValue( mixed $withValue ): void;
+		public function decreaseByValue(
+			mixed $withValue
+		): void;
 	
 		/**
 		 * @return mixed
@@ -42,6 +46,8 @@
 		 * @param mixed $withValue
 		 * @return mixed
 		 */
-		public function setCounterValue( mixed $withValue );
+		public function setCounterValue(
+			mixed $withValue
+		);
 	}
 ?>

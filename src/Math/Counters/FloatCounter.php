@@ -33,7 +33,9 @@
 		 * @param mixed $withValue
 		 * @return void
 		 */
-		public function decreaseByValue( mixed $withValue ): void
+		public function decreaseByValue(
+			mixed $withValue
+		): void
 		{
 		
 		}
@@ -50,7 +52,9 @@
 		 * @param mixed $withValue
 		 * @return void
 		 */
-		public function increaseByValue( mixed $withValue ): void
+		public function increaseByValue(
+			mixed $withValue
+		): void
 		{
 		
 		}
@@ -59,7 +63,9 @@
 		 * @param mixed $withValue
 		 * @return void
 		 */
-		public function setCounterValue( mixed $withValue ): void
+		public function setCounterValue(
+			mixed $withValue
+		): void
 		{
 		
 		}
@@ -77,7 +83,9 @@
 		 * @param float $value
 		 * @return void
 		 */
-        public final function setValue( float $value ): void
+        public final function setValue(
+			float $value
+		): void
         {
             $this->value = $value;
         }
@@ -94,7 +102,9 @@
 		 * @param float $value
 		 * @return void
 		 */
-        public final function increase( float $value ): void
+        public final function increase(
+			float $value
+		): void
         {
             $this->setValue( $this->getValue() + $value );
         }
@@ -111,7 +121,9 @@
 		 * @param float $withValue
 		 * @return void
 		 */
-        public final function decrease( float $withValue ): void
+        public final function decrease(
+			float $withValue
+		): void
         {
             $this->setValue($this->getValue() - $withValue );
         }

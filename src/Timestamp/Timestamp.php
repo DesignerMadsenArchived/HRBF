@@ -38,7 +38,9 @@
 		/**
 		 * @param TimestampType|null $type
 		 */
-		public final function setType( ?TimestampType $type ): void
+		public final function setType(
+			?TimestampType $type
+		): void
 		{
 			$this->type = $type;
 		}

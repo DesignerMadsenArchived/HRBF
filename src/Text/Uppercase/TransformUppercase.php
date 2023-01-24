@@ -10,6 +10,12 @@
      */
     interface TransformUppercase
     {
-        function transform( string $value ): string;
+		/**
+		 * @param string $value
+		 * @return string
+		 */
+        function transform(
+			string $value
+		): string;
     }
 ?>
