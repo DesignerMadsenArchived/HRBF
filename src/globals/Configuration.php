@@ -33,7 +33,9 @@
         /**
          * @param EncodingType $encoding
          */
-        public static function setEncoding( EncodingType $encoding ): void
+        public static function setEncoding(
+			EncodingType $encoding
+		): void
         {
             self::$encoding = $encoding;
         }
@@ -49,7 +51,9 @@
         /**
          * @param StringAlgorithmType $stringAlgorithm
          */
-        public static function setStringAlgorithm( StringAlgorithmType $stringAlgorithm ): void
+        public static function setStringAlgorithm(
+			StringAlgorithmType $stringAlgorithm
+		): void
         {
             self::$stringAlgorithm = $stringAlgorithm;
         }
@@ -65,7 +69,9 @@
         /**
          * @param bool $multibyteAllowed
          */
-        public static function setMultibyteAllowed( bool $multibyteAllowed ): void
+        public static function setMultibyteAllowed(
+			bool $multibyteAllowed
+		): void
         {
             self::$multibyteAllowed = $multibyteAllowed;
         }
@@ -81,7 +87,9 @@
         /**
          * @param bool $multibyteAutoDetectEncoding
          */
-        public static function setMultibyteAutoDetectEncoding( bool $multibyteAutoDetectEncoding ): void
+        public static function setMultibyteAutoDetectEncoding(
+			bool $multibyteAutoDetectEncoding
+		): void
         {
             self::$multibyteAutoDetectEncoding = $multibyteAutoDetectEncoding;
         }

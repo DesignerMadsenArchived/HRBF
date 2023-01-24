@@ -2,14 +2,21 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\types;
+    namespace IOJaegers\Hrbf\Types;
 
     /**
      *
      */
     enum StringAlgorithmType
     {
+		/**
+		 *
+		 */
         case Multibyte;
+		
+		/**
+		 *
+		 */
         case SingleByte;
     }
 ?>

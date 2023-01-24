@@ -2,28 +2,29 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\stringAlgorithms\uppercase;
+    namespace IOJaegers\Hrbf\Text\Strings\Lowercase;
 
     use IOJaegers\Hrbf\globals\Configuration;
-    use IOJaegers\Hrbf\types\EncodingType;
-
+    use IOJaegers\Hrbf\Types\EncodingType;
 
     /**
      *
      */
-    class MultiByteUppercase
-        implements TransformUppercase
+    class MultiByteLowercase
+        implements TransformLowercase
     {
         /**
          * @param string $value
          * @return string
          * @throws \ErrorException
          */
-        public function transform( string $value ): string
+        public function transform(
+			string $value
+		): string
         {
             if( Configuration::isMultibyteAllowed() )
             {
-                return $this->UpperFunction( $value );
+                return $this::LowerFunction( $value );
             }
             else
             {
@@ -31,33 +32,40 @@
             }
         }
 
-        /**
-         * @param string $value
-         * @return string
-         */
-        protected function UpperFunction(string $value): string
-        {
-            return mb_strtoupper( $value, $this->default( $value ) );
-        }
 
         /**
          * @param string $value
          * @return string
          */
-        protected function default( string $value ): string
+        protected function LowerFunction(
+			string $value
+		): string
+        {
+            return mb_strtolower( $value, $this->default( $value ) );
+        }
+
+
+        /**
+         * @param string $input
+         * @return string
+         */
+        protected function default(
+			string $input
+		): string
         {
             if( Configuration::isMultibyteAutoDetectEncodingAllowed() )
             {
-                return mb_detect_encoding( $value );
+                return mb_detect_encoding( $input );
             }
 
             return $this->defaultSetEncoding();
         }
 
+
         /**
          * @return string
          */
-        protected function defaultSetEncoding(): string
+        protected function defaultSetEncoding():string
         {
             switch ( Configuration::getEncoding() )
             {

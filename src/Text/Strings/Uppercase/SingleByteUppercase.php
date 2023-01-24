@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\stringAlgorithms\uppercase;
+    namespace IOJaegers\Hrbf\Text\Strings\Uppercase;
 
     /**
      *
@@ -14,7 +14,9 @@
          * @param string $value
          * @return string
          */
-        public function transform( string $value ) : string
+        public function transform(
+			string $value
+		) : string
         {
             return strtoupper( $value );
         }

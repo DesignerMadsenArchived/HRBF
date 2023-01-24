@@ -2,19 +2,19 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf;
+    namespace IOJaegers\Hrbf\Text\Strings;
 
     use IOJaegers\Hrbf\globals\Configuration;
-    use IOJaegers\Hrbf\types\StringAlgorithmType;
+    use IOJaegers\Hrbf\Types\StringAlgorithmType;
 
-    use IOJaegers\Hrbf\stringAlgorithms\uppercase\TransformUppercase;
-    use IOJaegers\Hrbf\stringAlgorithms\lowercase\TransformLowercase;
+    use IOJaegers\Hrbf\Text\Strings\Uppercase\TransformUppercase;
+    use IOJaegers\Hrbf\Text\Strings\Lowercase\TransformLowercase;
 
-    use IOJaegers\Hrbf\stringAlgorithms\lowercase\MultiByteLowercase;
-    use IOJaegers\Hrbf\stringAlgorithms\lowercase\SingleByteLowercase;
+    use IOJaegers\Hrbf\Text\Strings\Lowercase\MultiByteLowercase;
+    use IOJaegers\Hrbf\Text\Strings\Lowercase\SingleByteLowercase;
 
-    use IOJaegers\Hrbf\stringAlgorithms\uppercase\MultiByteUppercase;
-    use IOJaegers\Hrbf\stringAlgorithms\uppercase\SingleByteUppercase;
+    use IOJaegers\Hrbf\Text\Strings\Uppercase\MultiByteUppercase;
+    use IOJaegers\Hrbf\Text\Strings\Uppercase\SingleByteUppercase;
 
 
     /**
@@ -22,14 +22,26 @@
      */
     final class StringTransformer
     {
+		// Variables
+		/**
+		 * @var TransformUppercase|null
+		 */
         private static ?TransformUppercase $uppercase = null;
+	
+		/**
+		 * @var TransformLowercase|null
+		 */
         private static ?TransformLowercase $lowercase = null;
 
+		
+		// Code
         /**
          * @param string|null $value
          * @return string|null
          */
-        public static function Upper( ?string $value ): null|string
+        public static function Upper(
+			?string $value
+		): null|string
         {
             if( self::validateHasValue( $value ) )
             {
@@ -43,15 +55,17 @@
          * @param string $input
          * @return string|null
          */
-        protected static function chooseUpperAlgorithm( string $input ): ?string
+        protected static function chooseUpperAlgorithm(
+			string $input
+		): ?string
         {
             switch( Configuration::getStringAlgorithm() )
             {
                 case StringAlgorithmType::SingleByte:
-                    return self::selectUpperSingleByte($input);
+                    return self::selectUpperSingleByte( $input );
 
                 case StringAlgorithmType::Multibyte:
-                    return self::selectUpperMultiByte($input);
+                    return self::selectUpperMultiByte( $input );
 
                 default:
                     return null;
@@ -62,7 +76,9 @@
          * @param string $value
          * @return string
          */
-        private static function selectUpperSingleByte( string $value ): string
+        private static function selectUpperSingleByte(
+			string $value
+		): string
         {
             if( self::isUppercaseTransformSet() &&
                 ( self::getUppercase() instanceof SingleByteUppercase ) )
@@ -80,7 +96,9 @@
          * @param string $value
          * @return string
          */
-        private static function selectUpperMultiByte( string $value ): string
+        private static function selectUpperMultiByte(
+			string $value
+		): string
         {
             if( self::isUppercaseTransformSet() &&
                 ( self::getUppercase() instanceof MultiByteUppercase ) )
@@ -99,7 +117,9 @@
          * @param string|null $value
          * @return string|null
          */
-        public static function Lower( ?string $value ): null|string
+        public static function Lower(
+			?string $value
+		): null|string
         {
             if( self::validateHasValue( $value ) )
             {
@@ -113,7 +133,9 @@
          * @param string $value
          * @return string|null
          */
-        protected static function chooseLowerAlgorithm( string $value ): ?string
+        protected static function chooseLowerAlgorithm(
+			string $value
+		): ?string
         {
             switch( Configuration::getStringAlgorithm() )
             {
@@ -132,7 +154,9 @@
          * @param string $value
          * @return string
          */
-        private static function selectLowerSingleByte( string $value ): string
+        private static function selectLowerSingleByte(
+			string $value
+		): string
         {
             if( self::isLowercaseTransformSet() &&
                 ( self::getLowercase() instanceof SingleByteLowercase ) )
@@ -150,7 +174,9 @@
          * @param string $value
          * @return string
          */
-        private static function selectLowerMultiByte( string $value ): string
+        private static function selectLowerMultiByte(
+			string $value
+		): string
         {
             if( self::isLowercaseTransformSet() &&
                 ( self::getLowercase() instanceof MultiByteUppercase ) )
@@ -165,16 +191,20 @@
         }
 
 
+		// Validation
         /**
          * @param string|null $value
          * @return bool
          */
-        protected static function validateHasValue( ?string $value ): bool
+        protected static function validateHasValue(
+			?string $value
+		): bool
         {
             return isset( $value );
         }
 
 
+		// Accessors
         /**
          * @return TransformUppercase
          */
@@ -187,7 +217,9 @@
          * @param TransformUppercase $uppercase
          * @return void
          */
-        protected static function setUppercase( TransformUppercase $uppercase ): void
+        protected static function setUppercase(
+			TransformUppercase $uppercase
+		): void
         {
             self::$uppercase = $uppercase;
         }
@@ -204,11 +236,14 @@
          * @param TransformLowercase $lowercase
          * @return void
          */
-        protected static function setLowercase( TransformLowercase $lowercase ): void
+        protected static function setLowercase(
+			TransformLowercase $lowercase
+		): void
         {
             self::$lowercase = $lowercase;
         }
 
+		// Is states
         /**
          * @return bool
          */
