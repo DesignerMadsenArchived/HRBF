@@ -30,7 +30,43 @@
         const zero = 0;
 		
 		
-        // Accessor
+		// Interface Counter
+		/**
+		 * @param mixed $withValue
+		 * @return void
+		 */
+		public function decreaseByValue( mixed $withValue ): void
+		{
+			$this->decrease( $withValue );
+		}
+	
+		/**
+		 * @return int
+		 */
+		public function getCounterValue(): int
+		{
+			return $this->getValue();
+		}
+	
+		/**
+		 * @param mixed $withValue
+		 * @return void
+		 */
+		public function increaseByValue( mixed $withValue ): void
+		{
+			$this->increase( $withValue );
+		}
+	
+		/**
+		 * @param mixed $withValue
+		 * @return void
+		 */
+		public function setCounterValue( mixed $withValue ): void
+		{
+			$this->setValue( $withValue );
+		}
+	
+		// Accessor
         /**
          * @return int
          */

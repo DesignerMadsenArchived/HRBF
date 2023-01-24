@@ -28,9 +28,43 @@
         const one = 1.0;
 		
         const zero = 0.0;
-
+	
+		/**
+		 * @param mixed $withValue
+		 * @return void
+		 */
+		public function decreaseByValue( mixed $withValue ): void
+		{
 		
-        // Accessor
+		}
+	
+		/**
+		 * @return float
+		 */
+		public function getCounterValue(): float
+		{
+			return $this->getValue();
+		}
+	
+		/**
+		 * @param mixed $withValue
+		 * @return void
+		 */
+		public function increaseByValue( mixed $withValue ): void
+		{
+		
+		}
+	
+		/**
+		 * @param mixed $withValue
+		 * @return void
+		 */
+		public function setCounterValue( mixed $withValue ): void
+		{
+		
+		}
+	
+		// Accessor
 		/**
 		 * @return float
 		 */
