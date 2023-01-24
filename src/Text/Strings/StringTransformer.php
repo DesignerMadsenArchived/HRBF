@@ -2,19 +2,19 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf;
+    namespace IOJaegers\Hrbf\Text\Strings;
 
     use IOJaegers\Hrbf\globals\Configuration;
-    use IOJaegers\Hrbf\types\StringAlgorithmType;
+    use IOJaegers\Hrbf\Types\StringAlgorithmType;
 
-    use IOJaegers\Hrbf\stringAlgorithms\uppercase\TransformUppercase;
-    use IOJaegers\Hrbf\stringAlgorithms\lowercase\TransformLowercase;
+    use IOJaegers\Hrbf\Text\Strings\Uppercase\TransformUppercase;
+    use IOJaegers\Hrbf\Text\Strings\Lowercase\TransformLowercase;
 
-    use IOJaegers\Hrbf\stringAlgorithms\lowercase\MultiByteLowercase;
-    use IOJaegers\Hrbf\stringAlgorithms\lowercase\SingleByteLowercase;
+    use IOJaegers\Hrbf\Text\Strings\Lowercase\MultiByteLowercase;
+    use IOJaegers\Hrbf\Text\Strings\Lowercase\SingleByteLowercase;
 
-    use IOJaegers\Hrbf\stringAlgorithms\uppercase\MultiByteUppercase;
-    use IOJaegers\Hrbf\stringAlgorithms\uppercase\SingleByteUppercase;
+    use IOJaegers\Hrbf\Text\Strings\Uppercase\MultiByteUppercase;
+    use IOJaegers\Hrbf\Text\Strings\Uppercase\SingleByteUppercase;
 
 
     /**

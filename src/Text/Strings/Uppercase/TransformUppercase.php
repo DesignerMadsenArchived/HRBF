@@ -2,12 +2,13 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Text\Lowercase;
+    namespace IOJaegers\Hrbf\Text\Strings\Uppercase;
 
+	
     /**
      * @throws \ErrorException
      */
-    interface TransformLowercase
+    interface TransformUppercase
     {
 		/**
 		 * @param string $value
@@ -15,6 +16,6 @@
 		 */
         function transform(
 			string $value
-		): string ;
+		): string;
     }
 ?>

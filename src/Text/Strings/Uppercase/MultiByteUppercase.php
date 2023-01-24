@@ -2,16 +2,17 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Text\Lowercase;
+    namespace IOJaegers\Hrbf\Text\Strings\Uppercase;
 
     use IOJaegers\Hrbf\globals\Configuration;
-    use IOJaegers\Hrbf\types\EncodingType;
+    use IOJaegers\Hrbf\Types\EncodingType;
+
 
     /**
      *
      */
-    class MultiByteLowercase
-        implements TransformLowercase
+    class MultiByteUppercase
+        implements TransformUppercase
     {
         /**
          * @param string $value
@@ -24,7 +25,7 @@
         {
             if( Configuration::isMultibyteAllowed() )
             {
-                return $this::LowerFunction( $value );
+                return $this->UpperFunction( $value );
             }
             else
             {
@@ -32,40 +33,37 @@
             }
         }
 
+        /**
+         * @param string $value
+         * @return string
+         */
+        protected function UpperFunction(
+			string $value
+		): string
+        {
+            return mb_strtoupper( $value, $this->default( $value ) );
+        }
 
         /**
          * @param string $value
          * @return string
          */
-        protected function LowerFunction(
-			string $value
-		): string
-        {
-            return mb_strtolower( $value, $this->default( $value ) );
-        }
-
-
-        /**
-         * @param string $input
-         * @return string
-         */
         protected function default(
-			string $input
+			string $value
 		): string
         {
             if( Configuration::isMultibyteAutoDetectEncodingAllowed() )
             {
-                return mb_detect_encoding( $input );
+                return mb_detect_encoding( $value );
             }
 
             return $this->defaultSetEncoding();
         }
 
-
         /**
          * @return string
          */
-        protected function defaultSetEncoding():string
+        protected function defaultSetEncoding(): string
         {
             switch ( Configuration::getEncoding() )
             {

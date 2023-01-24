@@ -2,13 +2,13 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Text\Lowercase;
+    namespace IOJaegers\Hrbf\Text\Strings\Uppercase;
 
     /**
      *
      */
-    class SingleByteLowercase
-        implements TransformLowercase
+    class SingleByteUppercase
+        implements TransformUppercase
     {
         /**
          * @param string $value
@@ -16,9 +16,9 @@
          */
         public function transform(
 			string $value
-		): string
+		) : string
         {
-            return strtolower( $value );
+            return strtoupper( $value );
         }
     }
 ?>
