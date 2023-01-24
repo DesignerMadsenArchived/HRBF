@@ -9,7 +9,14 @@
      */
     enum EncodingType
     {
+		/**
+		 *
+		 */
         case UTF8;
-        case ASCII;
+		
+		/**
+		 *
+		 */
+		case ASCII;
     }
 ?>

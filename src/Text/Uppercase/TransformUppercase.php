@@ -2,8 +2,9 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\stringAlgorithms\uppercase;
+    namespace IOJaegers\Hrbf\Text\Uppercase;
 
+	
     /**
      * @throws \ErrorException
      */

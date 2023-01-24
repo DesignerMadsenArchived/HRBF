@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\stringAlgorithms\lowercase;
+    namespace IOJaegers\Hrbf\Text\Lowercase;
 
     use IOJaegers\Hrbf\globals\Configuration;
     use IOJaegers\Hrbf\types\EncodingType;

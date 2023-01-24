@@ -2,13 +2,27 @@
 	/**
 	 *
 	 */
-	namespace IoJaegers\Sitemap\Domain\Timestamp;
-		
+	namespace IOJaegers\Hrbf\Timestamp;
+	
+	
 	/**
 	 * 
 	 */
 	enum TimestampType
 	{
-		case Unknown;
+		/**
+		 *
+		 */
+		case SystemTimestamp;
+		
+		/**
+		 *
+		 */
+		case GregorianTimestamp;
+		
+		/**
+		 *
+		 */
+		case CustomTimestamp;
 	}
 ?>

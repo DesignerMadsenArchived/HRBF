@@ -1,5 +1,5 @@
 <?php
-	namespace IOJaegers\Hrbf\stringAlgorithms\html;
+	namespace IOJaegers\Hrbf\Text\HTML;
 
 	class HtmlProcessing
 	{

@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\stringAlgorithms\uppercase;
+    namespace IOJaegers\Hrbf\Text\Uppercase;
 
     use IOJaegers\Hrbf\globals\Configuration;
     use IOJaegers\Hrbf\types\EncodingType;
