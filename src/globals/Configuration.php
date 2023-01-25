@@ -4,8 +4,8 @@
      */
     namespace IOJaegers\Hrbf\globals;
 
-    use IOJaegers\Hrbf\types\EncodingType;
-    use IOJaegers\Hrbf\types\StringAlgorithmType;
+    use IOJaegers\Hrbf\Types\EncodingType;
+    use IOJaegers\Hrbf\Types\StringAlgorithmType;
 
 
     /**

@@ -10,9 +10,22 @@
 	 */
     class Link
     {
-        function __construct()
+        function __construct(
+			?LinkScheme $scheme,
+			?DomainName $domain
+		)
         {
-
+			$this->setScheme(
+				$scheme
+			);
+			
+			$this->setDomainName(
+				$domain
+			);
+			
+			$this->setSecureState(
+				SecureConnectionState::NONE
+			);
         }
 
         function __destruct()
@@ -21,22 +34,65 @@
         }
 		
 		// Variables
-		private ?string $scheme = null;
+		private ?LinkScheme $scheme = null;
+		private ?SecureConnectionState $secureState = null;
 		
-		private ?string $host = null;
+		private ?DomainName $domainName = null;
 		
 		private ?int $port = null;
-	
-		private ?string $user = null;
 		
-		private ?string $pass = null;
-	
+		private ?AccountCredentials $credentials = null;
 		private ?string $path = null;
 		
 		private ?string $query = null;
 		
 		private ?string $fragment = null;
 	
+		/**
+		 * @return AccountCredentials|null
+		 */
+		public function getCredentials(): ?AccountCredentials
+		{
+			return $this->credentials;
+		}
+	
+		/**
+		 * @param AccountCredentials|null $credentials
+		 */
+		public function setCredentials(
+			?AccountCredentials $credentials
+		): void
+		{
+			$this->credentials = $credentials;
+		}
+		
+		// Accessors
+		/**
+		 * @return SecureConnectionState|null
+		 */
+		public function getSecureState(): ?SecureConnectionState
+		{
+			return $this->secureState;
+		}
+		
+		
+		/**
+		 * @return DomainName|null
+		 */
+		public function getDomainName(): ?DomainName
+		{
+			return $this->domainName;
+		}
+	
+		/**
+		 * @param DomainName|null $domainName
+		 */
+		public function setDomainName(
+			?DomainName $domainName
+		): void
+		{
+			$this->domainName = $domainName;
+		}
 	
 		/**
 		 * @return string|null
@@ -45,23 +101,7 @@
 		{
 			return $this->fragment;
 		}
-	
-		/**
-		 * @return string|null
-		 */
-		public function getHost(): ?string
-		{
-			return $this->host;
-		}
-	
-		/**
-		 * @return string|null
-		 */
-		public function getPass(): ?string
-		{
-			return $this->pass;
-		}
-	
+		
 		/**
 		 * @return string|null
 		 */
@@ -87,22 +127,23 @@
 		}
 	
 		/**
-		 * @return string|null
+		 * @return LinkScheme|null
 		 */
-		public function getScheme(): ?string
+		public function getScheme(): ?LinkScheme
 		{
 			return $this->scheme;
 		}
 	
-	
 		/**
-		 * @return string|null
+		 * @param LinkScheme|null $scheme
 		 */
-		public function getUser(): ?string
+		public function setScheme(
+			?LinkScheme $scheme
+		): void
 		{
-			return $this->user;
+			$this->scheme = $scheme;
 		}
-	
+		
 		/**
 		 * @param string|null $fragment
 		 */
@@ -112,27 +153,7 @@
 		{
 			$this->fragment = $fragment;
 		}
-	
-		/**
-		 * @param string|null $host
-		 */
-		public function setHost(
-			?string $host
-		): void
-		{
-			$this->host = $host;
-		}
-	
-		/**
-		 * @param string|null $pass
-		 */
-		public function setPass(
-			?string $pass
-		): void
-		{
-			$this->pass = $pass;
-		}
-	
+		
 		/**
 		 * @param string|null $path
 		 */
@@ -164,23 +185,13 @@
 		}
 	
 		/**
-		 * @param string|null $scheme
+		 * @param SecureConnectionState|null $secureState
 		 */
-		public function setScheme(
-			?string $scheme
+		public function setSecureState(
+			?SecureConnectionState $secureState
 		): void
 		{
-			$this->scheme = $scheme;
-		}
-	
-		/**
-		 * @param string|null $user
-		 */
-		public function setUser(
-			?string $user
-		): void
-		{
-			$this->user = $user;
+			$this->secureState = $secureState;
 		}
 	}
 ?>

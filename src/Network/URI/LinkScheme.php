@@ -1,11 +1,10 @@
 <?php
 	namespace IoJaegers\Hrbf\Network\URI;
 
+	
 	enum LinkScheme
 	{
 		case HTTP;
-		
-		case HTTPS;
 		
 		case FTP;
 		
