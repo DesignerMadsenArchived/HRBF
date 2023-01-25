@@ -10,11 +10,17 @@
 	 */
     class DomainName
     {
+		/**
+		 *
+		 */
         function __construct()
         {
 
         }
-
+	
+		/**
+		 *
+		 */
         function __destruct()
         {
 

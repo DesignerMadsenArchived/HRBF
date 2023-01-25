@@ -10,6 +10,10 @@
 	 */
     class Link
     {
+		/**
+		 * @param LinkScheme|null $scheme
+		 * @param DomainName|null $domain
+		 */
         function __construct(
 			?LinkScheme $scheme,
 			?DomainName $domain
@@ -26,8 +30,15 @@
 			$this->setSecureState(
 				SecureConnectionState::NONE
 			);
+			
+			$this->setCredentials(
+				new AccountCredential()
+			);
         }
-
+	
+		/**
+		 *
+		 */
         function __destruct()
         {
 
@@ -35,42 +46,45 @@
 		
 		// Variables
 		private ?LinkScheme $scheme = null;
+		
 		private ?SecureConnectionState $secureState = null;
 		
 		private ?DomainName $domainName = null;
 		
 		private ?int $port = null;
 		
-		private ?AccountCredentials $credentials = null;
+		private ?AccountCredential $credentials = null;
+		
 		private ?string $path = null;
 		
 		private ?string $query = null;
 		
 		private ?string $fragment = null;
 	
+		
+		// Accessors
 		/**
-		 * @return AccountCredentials|null
+		 * @return AccountCredential|null
 		 */
-		public function getCredentials(): ?AccountCredentials
+		public final function getCredentials(): ?AccountCredential
 		{
 			return $this->credentials;
 		}
 	
 		/**
-		 * @param AccountCredentials|null $credentials
+		 * @param AccountCredential|null $credentials
 		 */
-		public function setCredentials(
-			?AccountCredentials $credentials
+		public final function setCredentials(
+			?AccountCredential $credentials
 		): void
 		{
 			$this->credentials = $credentials;
 		}
 		
-		// Accessors
 		/**
 		 * @return SecureConnectionState|null
 		 */
-		public function getSecureState(): ?SecureConnectionState
+		public final function getSecureState(): ?SecureConnectionState
 		{
 			return $this->secureState;
 		}
@@ -79,7 +93,7 @@
 		/**
 		 * @return DomainName|null
 		 */
-		public function getDomainName(): ?DomainName
+		public final function getDomainName(): ?DomainName
 		{
 			return $this->domainName;
 		}
@@ -87,7 +101,7 @@
 		/**
 		 * @param DomainName|null $domainName
 		 */
-		public function setDomainName(
+		public final function setDomainName(
 			?DomainName $domainName
 		): void
 		{
@@ -97,7 +111,7 @@
 		/**
 		 * @return string|null
 		 */
-		public function getFragment(): ?string
+		public final function getFragment(): ?string
 		{
 			return $this->fragment;
 		}
@@ -105,7 +119,7 @@
 		/**
 		 * @return string|null
 		 */
-		public function getPath(): ?string
+		public final function getPath(): ?string
 		{
 			return $this->path;
 		}
@@ -113,7 +127,7 @@
 		/**
 		 * @return int|null
 		 */
-		public function getPort(): ?int
+		public final function getPort(): ?int
 		{
 			return $this->port;
 		}
@@ -121,7 +135,7 @@
 		/**
 		 * @return string|null
 		 */
-		public function getQuery(): ?string
+		public final function getQuery(): ?string
 		{
 			return $this->query;
 		}
@@ -129,7 +143,7 @@
 		/**
 		 * @return LinkScheme|null
 		 */
-		public function getScheme(): ?LinkScheme
+		public final function getScheme(): ?LinkScheme
 		{
 			return $this->scheme;
 		}
@@ -137,7 +151,7 @@
 		/**
 		 * @param LinkScheme|null $scheme
 		 */
-		public function setScheme(
+		public final function setScheme(
 			?LinkScheme $scheme
 		): void
 		{
@@ -147,7 +161,7 @@
 		/**
 		 * @param string|null $fragment
 		 */
-		public function setFragment(
+		public final function setFragment(
 			?string $fragment
 		): void
 		{
@@ -157,7 +171,7 @@
 		/**
 		 * @param string|null $path
 		 */
-		public function setPath(
+		public final function setPath(
 			?string $path
 		): void
 		{
@@ -167,7 +181,7 @@
 		/**
 		 * @param int|null $port
 		 */
-		public function setPort(
+		public final function setPort(
 			?int $port
 		): void
 		{
@@ -177,7 +191,7 @@
 		/**
 		 * @param string|null $query
 		 */
-		public function setQuery(
+		public final function setQuery(
 			?string $query
 		): void
 		{
@@ -187,7 +201,7 @@
 		/**
 		 * @param SecureConnectionState|null $secureState
 		 */
-		public function setSecureState(
+		public final function setSecureState(
 			?SecureConnectionState $secureState
 		): void
 		{

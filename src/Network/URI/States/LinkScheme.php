@@ -1,7 +1,12 @@
 <?php
-	namespace IoJaegers\Hrbf\Network\URI;
-
+	/**
+	 *
+	 */
+	namespace IoJaegers\Hrbf\Network\URI\States;
 	
+	/**
+	 *
+	 */
 	enum LinkScheme
 	{
 		case HTTP;
@@ -25,5 +30,7 @@
 		case OGG;
 		
 		case EXPECT;
+		
+		case NONE;
 	}
 ?>

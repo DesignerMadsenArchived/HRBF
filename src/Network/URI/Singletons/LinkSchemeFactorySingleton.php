@@ -1,5 +1,5 @@
 <?php
-	namespace IoJaegers\Hrbf\Network\URI;
+	namespace IoJaegers\Hrbf\Network\URI\Singletons;
 	
 	/**
 	 *
@@ -10,6 +10,14 @@
 		 *
 		 */
 		public function __construct()
+		{
+		
+		}
+		
+		/**
+		 *
+		 */
+		public function __destruct()
 		{
 		
 		}
