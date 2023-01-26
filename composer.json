@@ -1,10 +1,13 @@
 {
     "name": "io-jaegers/hrbf",
     "description": "Human Readable Basic Functions",
-    "type": "library",
-    "time": "2023-01-26",
     "readme": "Readme.md",
+    "type": "library",
+
+    "time": "2023-01-26",
+
     "license": "MIT",
+
     "keywords": [
 
     ],
@@ -26,8 +29,13 @@
     "require":
     {
         "php": ">=8.1",
+
         "ext-mbstring": "*",
         "ext-intl": "*"
+    },
+    "suggest":
+    {
+
     },
     "scripts":
     {
@@ -35,6 +43,8 @@
     },
     "support":
     {
-        "": ""
+        "email": "support@cloud.iojaegers.com",
+        "issues": "https://github.com/IO-Jaegers/HRBF/issues",
+        "source": "https://github.com/IO-Jaegers/HRBF"
     }
 }
