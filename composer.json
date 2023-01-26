@@ -17,5 +17,8 @@
             "email": "kent.vejrup.madsen@designermadsen.dk"
         }
     ],
-    "require": {}
+    "require":
+    {
+
+    }
 }

@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-	namespace IoJaegers\Hrbf\Network\URI\States;
+	namespace IOJaegers\Hrbf\Network\URI\States;
 	
 	/**
 	 *

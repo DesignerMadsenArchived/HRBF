@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IoJaegers\Hrbf\Network\URI\Singletons;
+    namespace IOJaegers\Hrbf\Network\URI\Singletons;
 
 
 	/**

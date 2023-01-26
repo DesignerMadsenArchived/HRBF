@@ -30,6 +30,10 @@
             );
         }
 
+        /**
+         * @param int $indexPosition
+         * @return Subdomain|null
+         */
         public final function retrieve(
             int $indexPosition
         ): ?Subdomain
@@ -43,7 +47,10 @@
             return null;
         }
 
-
+        /**
+         * @param Subdomain $subdomain
+         * @return void
+         */
         public final function insert(
             Subdomain $subdomain
         ): void
@@ -51,6 +58,10 @@
             array_push( $this->subdomains, $subdomain );
         }
 
+        /**
+         * @param int $index
+         * @return void
+         */
         public final function delete(
             int $index
         ): void
@@ -60,14 +71,30 @@
             );
         }
 
+        /**
+         * @param int $fromInIndex
+         * @param int $toInIndex
+         * @return void
+         */
         public final function move(
             int $fromInIndex,
             int $toInIndex
         ): void
         {
+            $from = $this->retrieve( $fromInIndex );
+            $to = $this->retrieve( $toInIndex );
 
+            if( isset( $from ) &&
+                isset( $to ) )
+            {
+                $this->getSubdomains()[$toInIndex] = $from;
+                $this->getSubdomains()[$fromInIndex] = $to;
+            }
         }
 
+        /**
+         * @return int
+         */
         public final function length(): int
         {
             if( $this->isSubdomainsNull() )

@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IoJaegers\Hrbf\Network\URI\Account;
+    namespace IOJaegers\Hrbf\Network\URI\Account;
 
 
 	/**
