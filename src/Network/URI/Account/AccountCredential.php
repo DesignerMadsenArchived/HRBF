@@ -73,6 +73,22 @@
 		{
 			$this->username = $username;
 		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isUsernameNull(): bool
+		{
+			return is_null( $this->username );
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isPasswordNull(): bool
+		{
+			return is_null( $this->password );
+		}
 		
 	}
 ?>

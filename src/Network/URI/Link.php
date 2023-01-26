@@ -3,8 +3,13 @@
 	 *
 	 */
     namespace IoJaegers\Hrbf\Network\URI;
-
-
+	
+	use IoJaegers\Hrbf\Network\URI\States\SecureConnectionState;
+	use IoJaegers\Hrbf\Network\URI\Account\AccountCredential;
+	use IoJaegers\Hrbf\Network\URI\Objects\DomainName;
+	use IoJaegers\Hrbf\Network\URI\States\LinkScheme;
+	
+	
 	/**
 	 *
 	 */
@@ -44,6 +49,7 @@
 
         }
 		
+		
 		// Variables
 		private ?LinkScheme $scheme = null;
 		
@@ -54,12 +60,6 @@
 		private ?int $port = null;
 		
 		private ?AccountCredential $credentials = null;
-		
-		private ?string $path = null;
-		
-		private ?string $query = null;
-		
-		private ?string $fragment = null;
 	
 		
 		// Accessors
@@ -107,23 +107,7 @@
 		{
 			$this->domainName = $domainName;
 		}
-	
-		/**
-		 * @return string|null
-		 */
-		public final function getFragment(): ?string
-		{
-			return $this->fragment;
-		}
 		
-		/**
-		 * @return string|null
-		 */
-		public final function getPath(): ?string
-		{
-			return $this->path;
-		}
-	
 		/**
 		 * @return int|null
 		 */
@@ -131,14 +115,7 @@
 		{
 			return $this->port;
 		}
-	
-		/**
-		 * @return string|null
-		 */
-		public final function getQuery(): ?string
-		{
-			return $this->query;
-		}
+		
 	
 		/**
 		 * @return LinkScheme|null
@@ -158,25 +135,6 @@
 			$this->scheme = $scheme;
 		}
 		
-		/**
-		 * @param string|null $fragment
-		 */
-		public final function setFragment(
-			?string $fragment
-		): void
-		{
-			$this->fragment = $fragment;
-		}
-		
-		/**
-		 * @param string|null $path
-		 */
-		public final function setPath(
-			?string $path
-		): void
-		{
-			$this->path = $path;
-		}
 	
 		/**
 		 * @param int|null $port
@@ -186,16 +144,6 @@
 		): void
 		{
 			$this->port = $port;
-		}
-	
-		/**
-		 * @param string|null $query
-		 */
-		public final function setQuery(
-			?string $query
-		): void
-		{
-			$this->query = $query;
 		}
 	
 		/**
