@@ -20,6 +20,6 @@
     "require":
     {
         "ext-mbstring": "*",
-        "ext-zend opcache": "*"
+        "ext-intl": "*"
     }
 }
