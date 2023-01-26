@@ -2,7 +2,7 @@
     /**
  *
  */
-	namespace IOJaegers\Hrbf\Math\Counters;
+	namespace IOJaegers\HRBF\Math\Counters;
 
 	
     /**

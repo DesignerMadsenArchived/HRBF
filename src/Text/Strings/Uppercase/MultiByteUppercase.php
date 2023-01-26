@@ -2,10 +2,10 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Text\Strings\Uppercase;
+    namespace IOJaegers\HRBF\Text\Strings\Uppercase;
 
-    use IOJaegers\Hrbf\globals\Configuration;
-    use IOJaegers\Hrbf\Types\EncodingType;
+    use IOJaegers\HRBF\globals\Configuration;
+    use IOJaegers\HRBF\Types\EncodingType;
 
 
     /**

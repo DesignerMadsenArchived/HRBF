@@ -2,10 +2,10 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\globals;
+    namespace IOJaegers\HRBF\Globals;
 
-    use IOJaegers\Hrbf\types\EncodingType;
-    use IOJaegers\Hrbf\types\StringAlgorithmType;
+    use IOJaegers\HRBF\Types\EncodingType;
+    use IOJaegers\HRBF\Types\StringAlgorithmType;
 
 
     /**

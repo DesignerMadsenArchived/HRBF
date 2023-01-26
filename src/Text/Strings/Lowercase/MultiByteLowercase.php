@@ -2,10 +2,10 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Text\Strings\Lowercase;
+    namespace IOJaegers\HRBF\Text\Strings\Lowercase;
 
-    use IOJaegers\Hrbf\globals\Configuration;
-    use IOJaegers\Hrbf\Types\EncodingType;
+    use IOJaegers\HRBF\globals\Configuration;
+    use IOJaegers\HRBF\Types\EncodingType;
 
     /**
      *

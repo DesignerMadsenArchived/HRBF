@@ -2,7 +2,7 @@
     /**
      *
      */
-	namespace IOJaegers\Hrbf\Math\Counters;
+	namespace IOJaegers\HRBF\Math\Counters;
 
 
     /**
@@ -22,12 +22,11 @@
         }
 
         // Variable
-        private float $value = 0;
+        private float $value = 0.0;
 
 			// constants
-        const one = 1.0;
-		
-        const zero = 0.0;
+        private const one = 1.0;
+        private const zero = 0.0;
 	
 		/**
 		 * @param mixed $withValue

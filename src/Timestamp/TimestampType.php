@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-	namespace IOJaegers\Hrbf\Timestamp;
+	namespace IOJaegers\HRBF\Timestamp;
 	
 	
 	/**
