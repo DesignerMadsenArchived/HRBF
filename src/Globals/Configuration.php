@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\globals;
+    namespace IOJaegers\Hrbf\Globals;
 
     use IOJaegers\Hrbf\Types\EncodingType;
     use IOJaegers\Hrbf\Types\StringAlgorithmType;
