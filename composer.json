@@ -2,7 +2,13 @@
     "name": "io-jaegers/hrbf",
     "description": "Human Readable Basic Functions",
     "type": "library",
+    "time": "2023-01-26",
+    "readme": "Readme.md",
     "license": "MIT",
+    "keywords": [
+
+    ],
+
     "autoload":
     {
         "psr-4":
@@ -19,7 +25,16 @@
     ],
     "require":
     {
+        "php": ">=8.1",
         "ext-mbstring": "*",
         "ext-intl": "*"
+    },
+    "scripts":
+    {
+
+    },
+    "support":
+    {
+        "": ""
     }
 }
