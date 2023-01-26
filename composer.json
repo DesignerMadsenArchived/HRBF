@@ -74,6 +74,7 @@
 
     "minimum-stability": "dev",
     "prefer-stable": false,
+    "repository": "https://github.com/IO-Jaegers/HRBF",
 
     "autoload-dev":
     {
