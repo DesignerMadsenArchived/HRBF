@@ -8,7 +8,8 @@
 
     "license": "MIT",
 
-    "keywords": [
+    "keywords":
+    [
 
     ],
 
@@ -16,16 +17,41 @@
     {
         "psr-4":
         {
-            "IOJaegers\\HRBF\\": "src/"
+            "IOJaegers\\HRBF\\": "src/",
+            "IOJaegers\\HRBF\\Globals": "src/Globals",
+
+            "IOJaegers\\HRBF\\Text": "src/Text",
+
+            "IOJaegers\\HRBF\\Timestamp\\": "src/Timestamp",
+            "IOJaegers\\HRBF\\Types\\\\": "src/Types",
+
+            "IOJaegers\\HRBF\\Math": "src/Math",
+            "IoJaegers\\HRBF\\Network\\": "src/Network",
+        },
+
+        "exclude-from-classmap":
+        [
+            "tests/"
+        ]
+    },
+
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "IOJaegers\\HRBF\\Tests\\": "tests/"
         }
     },
+
     "authors":
     [
         {
             "name": "Kent vejrup Madsen",
-            "email": "kent.vejrup.madsen@designermadsen.dk"
+            "email": "kent.vejrup.madsen@designermadsen.dk",
+            "role": "developer"
         }
     ],
+
     "require":
     {
         "php": ">=8.1",
@@ -33,18 +59,27 @@
         "ext-mbstring": "*",
         "ext-intl": "*"
     },
+
     "suggest":
     {
 
     },
+
     "scripts":
     {
 
     },
+
     "support":
     {
         "email": "support@cloud.iojaegers.com",
         "issues": "https://github.com/IO-Jaegers/HRBF/issues",
-        "source": "https://github.com/IO-Jaegers/HRBF"
-    }
+        "source": "https://github.com/IO-Jaegers/HRBF",
+        "wiki": "https://github.com/IO-Jaegers/HRBF/wiki"
+    },
+
+    "abandoned": false,
+    
+    "minimum-stability": "dev",
+    "prefer-stable": false
 }
