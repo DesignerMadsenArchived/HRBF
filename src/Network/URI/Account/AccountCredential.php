@@ -79,7 +79,9 @@
 		 */
 		public final function isUsernameNull(): bool
 		{
-			return is_null( $this->username );
+			return is_null(
+                $this->username
+            );
 		}
 	
 		/**
@@ -87,7 +89,9 @@
 		 */
 		public final function isPasswordNull(): bool
 		{
-			return is_null( $this->password );
+			return is_null(
+                $this->password
+            );
 		}
 		
 	}
