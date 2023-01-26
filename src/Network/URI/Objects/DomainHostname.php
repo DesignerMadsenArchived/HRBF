@@ -41,7 +41,6 @@
             );
         }
 		
-		
 		// Variables
 		private ?string $hostname = null;
         private ?DomainTLD $tld = null;

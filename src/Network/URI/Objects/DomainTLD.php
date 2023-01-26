@@ -18,7 +18,7 @@
             ?string $tld = null
         )
         {
-            $this->setTlc( $tld );
+            $this->setTld( $tld );
         }
 	
 		/**
@@ -26,36 +26,36 @@
 		 */
         function __destruct()
         {
-            if( $this->isTlcSet() )
+            if( $this->isTldSet() )
             {
                 unset(
-                    $this->tlc
+                    $this->tld
                 );
             }
         }
 
 
 		// Variables
-		private ?string $tlc = null;
+		private ?string $tld = null;
 		
 
 		// Accessors
 		/**
 		 * @return string|null
 		 */
-		public final function getTlc(): ?string
+		public final function getTld(): ?string
 		{
-			return $this->tlc;
+			return $this->tld;
 		}
 	
 		/**
 		 * @param string|null $tlc
 		 */
-		public final function setTlc(
+		public final function setTld(
 			?string $tlc
 		): void
 		{
-			$this->tlc = $tlc;
+			$this->tld = $tlc;
 		}
 
         /**
@@ -64,17 +64,17 @@
         public final function isTlcNull(): bool
         {
             return is_null(
-                $this->tlc
+                $this->tld
             );
         }
 
         /**
          * @return bool
          */
-        public final function isTlcSet(): bool
+        public final function isTldSet(): bool
         {
             return isset(
-                $this->tlc
+                $this->tld
             );
         }
 
@@ -84,9 +84,9 @@
          */
         public final function toString(): ?string
         {
-            if( $this->isTlcSet() )
+            if( $this->isTldSet() )
             {
-                return $this->tlc;
+                return $this->tld;
             }
 
             return null;

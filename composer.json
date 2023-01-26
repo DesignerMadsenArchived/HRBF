@@ -26,7 +26,7 @@
             "IOJaegers\\HRBF\\Types\\": "src/Types/",
 
             "IOJaegers\\HRBF\\Math\\": "src/Math/",
-            "IoJaegers\\HRBF\\Network\\": "src/Network/"
+            "IOJaegers\\HRBF\\Network\\": "src/Network/"
         },
 
         "exclude-from-classmap":
@@ -52,6 +52,14 @@
         "ext-intl": "*"
     },
 
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "IOJaegers\\HRBF\\Tests\\": "tests/"
+        }
+    },
+
     "suggest":
     {
 
@@ -59,7 +67,7 @@
 
     "scripts":
     {
-
+        "test-library": "IOJaegers\\HRBF\\Tests\\TestLibrary::main"
     },
 
     "support":
@@ -74,13 +82,5 @@
 
     "minimum-stability": "dev",
     "prefer-stable": false,
-    "repository": "https://github.com/IO-Jaegers/HRBF",
-
-    "autoload-dev":
-    {
-        "psr-4":
-        {
-            "IOJaegers\\HRBF\\Tests\\": "tests/"
-        }
-    }
+    "repository": "https://github.com/IO-Jaegers/HRBF"
 }
