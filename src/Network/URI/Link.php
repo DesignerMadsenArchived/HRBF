@@ -174,5 +174,14 @@
 			$this->secureState = $secureState;
 		}
 
+
+        /**
+         * @return string|null
+         */
+        public function toString(): ?string
+        {
+            return null;
+        }
+
 	}
 ?>
