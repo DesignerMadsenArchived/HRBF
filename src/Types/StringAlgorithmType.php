@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Types;
+    namespace IOJaegers\HRBF\Types;
 
     /**
      *

@@ -2,11 +2,11 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\Hrbf\Network\URI\Singletons;
+    namespace IOJaegers\HRBF\Network\URI\Singletons;
 
 
-	use IOJaegers\Hrbf\Network\URI\Factories\SecureConnectionStateFactory;
-    use mysql_xdevapi\Statement;
+	use IOJaegers\HRBF\Network\URI\Factories\SecureConnectionStateFactory;
+
 
     /**
 	 *
@@ -31,6 +31,7 @@
 
         // Variables
         private Static ?SecureConnectionStateFactory $stateFactory = null;
+
 
         // Accessors
         /**

@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\Hrbf\Text\Strings\Uppercase;
+    namespace IOJaegers\HRBF\Text\Strings\Uppercase;
 
     /**
      *

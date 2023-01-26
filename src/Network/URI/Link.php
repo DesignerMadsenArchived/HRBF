@@ -2,12 +2,12 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\Hrbf\Network\URI;
+    namespace IOJaegers\HRBF\Network\URI;
 	
-	use IOJaegers\Hrbf\Network\URI\States\SecureConnectionState;
-	use IOJaegers\Hrbf\Network\URI\Account\AccountCredential;
-	use IOJaegers\Hrbf\Network\URI\Objects\DomainHostname;
-	use IOJaegers\Hrbf\Network\URI\States\LinkScheme;
+	use IOJaegers\HRBF\Network\URI\States\SecureConnectionState;
+	use IOJaegers\HRBF\Network\URI\Account\AccountCredential;
+	use IOJaegers\HRBF\Network\URI\Objects\DomainHostname;
+	use IOJaegers\HRBF\Network\URI\States\LinkScheme;
 	
 	
 	/**

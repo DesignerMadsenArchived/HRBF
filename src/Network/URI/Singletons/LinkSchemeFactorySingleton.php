@@ -1,7 +1,7 @@
 <?php
-	namespace IOJaegers\Hrbf\Network\URI\Singletons;
+	namespace IOJaegers\HRBF\Network\URI\Singletons;
 	
-	use IOJaegers\Hrbf\Network\URI\Factories\LinkSchemeFactory;
+	use IOJaegers\HRBF\Network\URI\Factories\LinkSchemeFactory;
 
 
     /**

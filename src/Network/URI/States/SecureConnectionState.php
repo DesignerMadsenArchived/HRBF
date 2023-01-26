@@ -1,5 +1,5 @@
 <?php
-	namespace IOJaegers\Hrbf\Network\URI\States;
+	namespace IOJaegers\HRBF\Network\URI\States;
 	
 	
 	/**

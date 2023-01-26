@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-	namespace IOJaegers\Hrbf\Timestamp;
+	namespace IOJaegers\HRBF\Timestamp;
 	
 	
 	/**
@@ -15,8 +15,17 @@
 		 */
 		public function __construct()
 		{
-			$this->setType( TimestampType::SystemTimestamp );
+			$this->setType(
+                TimestampType::SystemTimestamp
+            );
 		}
+
+        public function __deconstruct()
+        {
+            unset(
+                $this->type
+            );
+        }
 		
 		
 		// Variables

@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\Hrbf\Network\URI\Objects;
+    namespace IOJaegers\HRBF\Network\URI\Objects;
 
 
 	/**

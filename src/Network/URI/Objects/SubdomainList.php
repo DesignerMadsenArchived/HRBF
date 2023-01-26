@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IoJaegers\Hrbf\Network\URI\Objects;
+    namespace IoJaegers\HRBF\Network\URI\Objects;
 
 
 	/**

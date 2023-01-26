@@ -2,10 +2,10 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\Hrbf\Network\URI\Singletons;
+    namespace IOJaegers\HRBF\Network\URI\Singletons;
 
 
-	use IOJaegers\Hrbf\Network\URI\Factories\DomainFactory;
+	use IOJaegers\HRBF\Network\URI\Factories\DomainFactory;
 
 
     /**

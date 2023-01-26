@@ -1,5 +1,5 @@
 <?php
-    namespace IOJaegers\Hrbf\Network\IPAddresses;
+    namespace IOJaegers\HRBF\Network\IPAddresses;
 
 
     class IPv4Address
