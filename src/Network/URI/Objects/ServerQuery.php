@@ -10,12 +10,28 @@
 	 */
     class ServerQuery
     {
-		/**
-		 *
-		 */
-        function __construct()
+        /**
+         * @param string|null $path
+         * @param string|null $query
+         * @param string|null $fragment
+         */
+        function __construct(
+            ?string $path = null,
+            ?string $query = null,
+            ?string $fragment = null
+        )
         {
-			
+			$this->setPath(
+                $path
+            );
+
+            $this->setQuery(
+                $query
+            );
+
+            $this->setFragment(
+                $fragment
+            );
         }
 	
 		/**
@@ -23,13 +39,25 @@
 		 */
         function __destruct()
         {
+            unset(
+                $this->path
+            );
 
+            unset(
+                $this->fragment
+            );
+
+            unset(
+                $this->query
+            );
         }
-	
+
+
 		// Variables
 		private ?string $path = null;
 		private ?string $query = null;
 		private ?string $fragment = null;
+
 	
 		// Accessors
 		/**

@@ -14,8 +14,8 @@
 		 *
 		 */
         function __construct(
-            ?DomainName $name = null,
-            ?DomainTLD $tld = null
+            ?DomainHostname $name = null,
+            ?DomainTLD      $tld = null
         )
         {
             $this->setName(
@@ -32,30 +32,41 @@
 		 */
         function __destruct()
         {
+            unset(
+                $this->subdomains
+            );
 
+            unset(
+                $this->name
+            );
+
+            unset(
+                $this->tld
+            );
         }
-		
+
 		
 		// Variables
         private ?SubdomainList $subdomains = null;
-		private ?DomainName $name = null;
+
+		private ?DomainHostname $name = null;
         private ?DomainTLD $tld = null;
 
 
         // Accessors
         /**
-         * @return DomainName|null
+         * @return DomainHostname|null
          */
-        public final function getName(): ?DomainName
+        public final function getName(): ?DomainHostname
         {
             return $this->name;
         }
 
         /**
-         * @param DomainName|null $name
+         * @param DomainHostname|null $name
          */
         public final function setName(
-            ?DomainName $name
+            ?DomainHostname $name
         ): void
         {
             $this->name = $name;

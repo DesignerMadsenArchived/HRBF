@@ -27,7 +27,9 @@
 		 */
         function __destruct()
         {
-
+            unset(
+                $this->location
+            );
         }
 		
 		

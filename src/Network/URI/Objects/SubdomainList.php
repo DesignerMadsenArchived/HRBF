@@ -110,7 +110,11 @@
 		
 		// Variables
 		private ?array $subdomains = null;
+        private const zero = 0;
+        private const one = 1;
 
+        private const separator = '.';
+        private const emptyString = '';
 
 	
 		// Accessors
@@ -148,6 +152,83 @@
             return isset(
                 $this->subdomains
             );
+        }
+
+        /**
+         * @return string
+         */
+        public function toString(): string
+        {
+            if( $this->length() == self::zero )
+            {
+                return self::emptyString;
+            }
+
+            $retStr = self::emptyString;
+            $size = $this->length();
+            $lastEntry = $this->length() - self::one;
+
+            for( $idx = self::zero;
+                 $idx < $size;
+                 $idx ++ )
+            {
+                $current = $this->retrieve( $idx );
+
+                if( $idx == self::zero )
+                {
+                    $retStr = $retStr .
+                              $this->toStringStart(
+                                  $current->toString()
+                              );
+                }
+                else
+                {
+                    if( $idx == $lastEntry )
+                    {
+                        $retStr = $retStr .
+                            $this->toStringLast(
+                                $current->toString()
+                            );
+                    }
+                    else
+                    {
+                        $retStr = $retStr .
+                            $this->toStringNormal(
+                                $current->toString()
+                            );
+                    }
+                }
+
+            }
+
+            return $retStr;
+        }
+
+        /**
+         * @param $input
+         * @return string
+         */
+        protected function toStringNormal( $input ): string
+        {
+            return self::separator . $input;
+        }
+
+        /**
+         * @param $input
+         * @return string
+         */
+        protected function toStringStart( $input ): string
+        {
+            return $input;
+        }
+
+        /**
+         * @param $input
+         * @return string
+         */
+        protected function toStringLast( $input ): string
+        {
+            return $input;
         }
 	}
 ?>

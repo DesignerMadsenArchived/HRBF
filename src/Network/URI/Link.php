@@ -6,7 +6,7 @@
 	
 	use IOJaegers\Hrbf\Network\URI\States\SecureConnectionState;
 	use IOJaegers\Hrbf\Network\URI\Account\AccountCredential;
-	use IOJaegers\Hrbf\Network\URI\Objects\DomainName;
+	use IOJaegers\Hrbf\Network\URI\Objects\DomainHostname;
 	use IOJaegers\Hrbf\Network\URI\States\LinkScheme;
 	
 	
@@ -17,11 +17,11 @@
     {
 		/**
 		 * @param LinkScheme|null $scheme
-		 * @param DomainName|null $domain
+		 * @param DomainHostname|null $domain
 		 */
         function __construct(
 			?LinkScheme $scheme,
-			?DomainName $domain
+			?DomainHostname $domain
 		)
         {
 			$this->setScheme(
@@ -46,7 +46,25 @@
 		 */
         function __destruct()
         {
+            unset(
+                $this->scheme
+            );
 
+            unset(
+                $this->secureState
+            );
+
+            unset(
+                $this->port
+            );
+
+            unset(
+                $this->domainName
+            );
+
+            unset(
+                $this->credentials
+            );
         }
 		
 		
@@ -55,7 +73,7 @@
 		
 		private ?SecureConnectionState $secureState = null;
 		
-		private ?DomainName $domainName = null;
+		private ?DomainHostname $domainName = null;
 		
 		private ?int $port = null;
 		
@@ -91,18 +109,18 @@
 		
 		
 		/**
-		 * @return DomainName|null
+		 * @return DomainHostname|null
 		 */
-		public final function getDomainName(): ?DomainName
+		public final function getDomainName(): ?DomainHostname
 		{
 			return $this->domainName;
 		}
 	
 		/**
-		 * @param DomainName|null $domainName
+		 * @param DomainHostname|null $domainName
 		 */
 		public final function setDomainName(
-			?DomainName $domainName
+			?DomainHostname $domainName
 		): void
 		{
 			$this->domainName = $domainName;
@@ -155,5 +173,6 @@
 		{
 			$this->secureState = $secureState;
 		}
+
 	}
 ?>

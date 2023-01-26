@@ -77,6 +77,19 @@
                 $this->tlc
             );
         }
-		
+
+
+        /**
+         * @return string|null
+         */
+        public final function toString(): ?string
+        {
+            if( $this->isTlcSet() )
+            {
+                return $this->tlc;
+            }
+
+            return null;
+        }
 	}
 ?>
