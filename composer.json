@@ -18,29 +18,21 @@
         "psr-4":
         {
             "IOJaegers\\HRBF\\": "src/",
-            "IOJaegers\\HRBF\\Globals": "src/Globals",
+            "IOJaegers\\HRBF\\Globals\\": "src/Globals/",
 
-            "IOJaegers\\HRBF\\Text": "src/Text",
+            "IOJaegers\\HRBF\\Text\\": "src/Text/",
 
-            "IOJaegers\\HRBF\\Timestamp\\": "src/Timestamp",
-            "IOJaegers\\HRBF\\Types\\\\": "src/Types",
+            "IOJaegers\\HRBF\\Timestamp\\": "src/Timestamp/",
+            "IOJaegers\\HRBF\\Types\\": "src/Types/",
 
-            "IOJaegers\\HRBF\\Math": "src/Math",
-            "IoJaegers\\HRBF\\Network\\": "src/Network",
+            "IOJaegers\\HRBF\\Math\\": "src/Math/",
+            "IoJaegers\\HRBF\\Network\\": "src/Network/"
         },
 
         "exclude-from-classmap":
         [
             "tests/"
         ]
-    },
-
-    "autoload-dev":
-    {
-        "psr-4":
-        {
-            "IOJaegers\\HRBF\\Tests\\": "tests/"
-        }
     },
 
     "authors":
@@ -79,7 +71,15 @@
     },
 
     "abandoned": false,
-    
+
     "minimum-stability": "dev",
-    "prefer-stable": false
+    "prefer-stable": false,
+
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "IOJaegers\\HRBF\\Tests\\": "tests/"
+        }
+    }
 }
