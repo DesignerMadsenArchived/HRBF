@@ -9,6 +9,20 @@
      */
     class ServerQueryFactory
     {
-
+		/**
+		 *
+		 */
+		public function __construct()
+		{
+		
+		}
+	
+		/**
+		 * @return void
+		 */
+		public function __deconstruct()
+		{
+		
+		}
     }
 ?>

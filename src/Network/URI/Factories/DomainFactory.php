@@ -13,7 +13,7 @@
 		/**
 		 *
 		 */
-        function __construct()
+		public function __construct()
         {
 
         }
@@ -21,7 +21,7 @@
 		/**
 		 *
 		 */
-        function __destruct()
+		public function __destruct()
         {
 
         }

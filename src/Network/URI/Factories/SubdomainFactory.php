@@ -9,6 +9,20 @@
      */
     class SubdomainFactory
     {
-
+		/**
+		 *
+		 */
+		public function __construct()
+		{
+		
+		}
+	
+		/**
+		 * @return void
+		 */
+		public function __deconstruct()
+		{
+		
+		}
     }
 ?>

@@ -1,6 +1,7 @@
 <?php
 	namespace IOJaegers\HRBF\Network\URI\Factories;
 	
+	use IOJaegers\HRBF\Network\URI\States\LinkScheme;
 	
 	/**
 	 *
@@ -27,7 +28,7 @@
 		 * @param string $scheme_label
 		 * @return LinkScheme
 		 */
-		public function convert( string $scheme_label ): LinkScheme
+		public final function convert( string $scheme_label ): LinkScheme
 		{
 			return match ( $scheme_label )
 			{

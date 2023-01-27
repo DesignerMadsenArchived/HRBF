@@ -27,9 +27,7 @@
         {
             if( $this->isMapSet() )
             {
-                unset(
-                    $this->map
-                );
+				$this->deleteMap();
             }
         }
 
@@ -39,7 +37,7 @@
         /**
          * @return array|null
          */
-        public function getMap(): ?array
+        public final function getMap(): ?array
         {
             return $this->map;
         }
@@ -47,16 +45,26 @@
         /**
          * @param array|null $map
          */
-        public function setMap( ?array $map ): void
+        public final function setMap( ?array $map ): void
         {
             $this->map = $map;
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteMap(): void
+		{
+			unset(
+				$this->map
+			);
+		}
 
         /**
          * @param string $key
          * @return bool
          */
-        public function hasMapKey( string $key ): bool
+        public final function hasMapKey( string $key ): bool
         {
             if( $this->isMapNull() )
             {
@@ -72,7 +80,7 @@
         /**
          * @return bool
          */
-        public function isMapNull(): bool
+        public final function isMapNull(): bool
         {
             return is_null(
                 $this->map
@@ -82,7 +90,7 @@
         /**
          * @return bool
          */
-        public function isMapSet(): bool
+        public final function isMapSet(): bool
         {
             return isset(
                 $this->map
