@@ -25,10 +25,12 @@
          */
         function __destruct()
         {
-            unset(
-                $this->subdomains
-            );
+			if( $this->isSubdomainsSet() )
+			{
+				$this->deleteSubdomains();
+			}
         }
+		
 
         /**
          * @param int $indexPosition
@@ -87,8 +89,8 @@
             if( isset( $from ) &&
                 isset( $to ) )
             {
-                $this->getSubdomains()[$toInIndex] = $from;
-                $this->getSubdomains()[$fromInIndex] = $to;
+                $this->getSubdomains()[ $toInIndex ] = $from;
+                $this->getSubdomains()[ $fromInIndex ] = $to;
             }
         }
 
@@ -129,7 +131,9 @@
 		/**
 		 * @param array|null $subdomains
 		 */
-		public final function setSubdomains( ?array $subdomains ): void
+		public final function setSubdomains(
+			?array $subdomains
+		): void
 		{
 			$this->subdomains = $subdomains;
 		}
@@ -137,7 +141,7 @@
         /**
          * @return bool
          */
-        public function isSubdomainsNull(): bool
+        public final function isSubdomainsNull(): bool
         {
             return is_null(
                 $this->subdomains
@@ -147,17 +151,27 @@
         /**
          * @return bool
          */
-        public function isSubdomainsSet(): bool
+        public final function isSubdomainsSet(): bool
         {
             return isset(
                 $this->subdomains
             );
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteSubdomains(): void
+		{
+			unset(
+				$this->subdomains
+			);
+		}
 
         /**
          * @return string
          */
-        public function toString(): string
+        public final function toString(): string
         {
             if( $this->length() == self::zero )
             {
@@ -208,7 +222,9 @@
          * @param $input
          * @return string
          */
-        protected function toStringNormal( $input ): string
+        protected final function toStringNormal(
+			$input
+		): string
         {
             return self::separator . $input;
         }
@@ -217,7 +233,9 @@
          * @param $input
          * @return string
          */
-        protected function toStringStart( $input ): string
+        protected final function toStringStart(
+			$input
+		): string
         {
             return $input;
         }
@@ -226,7 +244,9 @@
          * @param $input
          * @return string
          */
-        protected function toStringLast( $input ): string
+        protected final function toStringLast(
+			$input
+		): string
         {
             return $input;
         }

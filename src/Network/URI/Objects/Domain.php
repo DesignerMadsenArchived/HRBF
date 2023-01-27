@@ -11,7 +11,8 @@
     class Domain
     {
 		/**
-		 *
+		 * @param DomainHostname|null $name
+		 * @param DomainTLD|null $tld
 		 */
         function __construct(
             ?DomainHostname $name = null,
@@ -32,17 +33,20 @@
 		 */
         function __destruct()
         {
-            unset(
-                $this->subdomains
-            );
+			if( $this->isSubdomainsSet() )
+			{
+				$this->deleteSubdomains();
+			}
 
-            unset(
-                $this->name
-            );
+			if( $this->isNameSet() )
+			{
+				$this->deleteName();
+			}
 
-            unset(
-                $this->tld
-            );
+			if( $this->isTldSet() )
+			{
+				$this->deleteTld();
+			}
         }
 
 		
@@ -50,6 +54,7 @@
         private ?SubdomainList $subdomains = null;
 
 		private ?DomainHostname $name = null;
+		
         private ?DomainTLD $tld = null;
 
 
@@ -71,6 +76,36 @@
         {
             $this->name = $name;
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteName(): void
+		{
+			unset(
+				$this->name
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isNameNull(): bool
+		{
+			return is_null(
+				$this->name
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isNameSet(): bool
+		{
+			return isset(
+				$this->name
+			);
+		}
 
         /**
          * @return DomainTLD|null
@@ -89,6 +124,36 @@
         {
             $this->tld = $tld;
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteTld(): void
+		{
+			unset(
+				$this->tld
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isTldSet(): bool
+		{
+			return isset(
+				$this->tld
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isTldNull(): bool
+		{
+			return is_null(
+				$this->name
+			);
+		}
 
         /**
          * @return SubdomainList|null
@@ -107,5 +172,48 @@
         {
             $this->subdomains = $subdomains;
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteSubdomains(): void
+		{
+			unset(
+				$this->subdomains
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isSubdomainsNull(): bool
+		{
+			return is_null(
+				$this->subdomains
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isSubdomainsSet(): bool
+		{
+			return isset(
+				$this->subdomains
+			);
+		}
+	
+		/**
+		 * @return int
+		 */
+		public final function numberOfSubdomains(): int
+		{
+			if( $this->isNameSet() )
+			{
+				return $this->getSubdomains()->length();
+			}
+			
+			return -1;
+		}
 	}
 ?>

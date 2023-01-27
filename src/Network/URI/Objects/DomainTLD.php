@@ -28,9 +28,7 @@
         {
             if( $this->isTldSet() )
             {
-                unset(
-                    $this->tld
-                );
+				$this->deleteTld();
             }
         }
 
@@ -77,6 +75,16 @@
                 $this->tld
             );
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteTld(): void
+		{
+			unset(
+				$this->tld
+			);
+		}
 
 
         /**

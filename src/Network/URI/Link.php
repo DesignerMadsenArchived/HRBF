@@ -4,9 +4,9 @@
 	 */
     namespace IOJaegers\HRBF\Network\URI;
 	
+	use IOJaegers\HRBF\Network\URI\Objects\Domain;
 	use IOJaegers\HRBF\Network\URI\States\SecureConnectionState;
 	use IOJaegers\HRBF\Network\URI\Account\AccountCredential;
-	use IOJaegers\HRBF\Network\URI\Objects\DomainHostname;
 	use IOJaegers\HRBF\Network\URI\States\LinkScheme;
 	
 	
@@ -17,18 +17,18 @@
     {
 		/**
 		 * @param LinkScheme|null $scheme
-		 * @param DomainHostname|null $domain
+		 * @param Domain|null $domain
 		 */
         function __construct(
 			?LinkScheme $scheme,
-			?DomainHostname $domain
+			?Domain $domain
 		)
         {
 			$this->setScheme(
 				$scheme
 			);
 			
-			$this->setDomainName(
+			$this->setDomain(
 				$domain
 			);
 			
@@ -46,25 +46,30 @@
 		 */
         function __destruct()
         {
-            unset(
-                $this->scheme
-            );
+			if( $this->isSchemeSet() )
+			{
+				$this->deleteScheme();
+			}
 
-            unset(
-                $this->secureState
-            );
-
-            unset(
-                $this->port
-            );
-
-            unset(
-                $this->domainName
-            );
-
-            unset(
-                $this->credentials
-            );
+			if( $this->isSecureStateSet() )
+			{
+				$this->deleteSecureState();
+			}
+	
+			if( $this->isPortSet() )
+			{
+				$this->deletePort();
+			}
+	
+			if( $this->isDomainSet() )
+			{
+				$this->deleteDomain();
+			}
+	
+			if( $this->isCredentialsSet() )
+			{
+				$this->deleteCredentials();
+			}
         }
 		
 		
@@ -73,7 +78,7 @@
 		
 		private ?SecureConnectionState $secureState = null;
 		
-		private ?DomainHostname $domainName = null;
+		private ?Domain $domain = null;
 		
 		private ?int $port = null;
 		
@@ -99,6 +104,33 @@
 			$this->credentials = $credentials;
 		}
 		
+		public function deleteCredentials(): void
+		{
+			unset(
+				$this->Credentials
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public function isCredentialsNull(): bool
+		{
+			return is_null(
+				$this->credentials
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public function isCredentialsSet(): bool
+		{
+			return isset(
+				$this->Credentials
+			);
+		}
+		
 		/**
 		 * @return SecureConnectionState|null
 		 */
@@ -107,23 +139,77 @@
 			return $this->secureState;
 		}
 		
+		public final function isSecureStateSet(): bool
+		{
+			return isset(
+				$this->secureState
+			);
+		}
+
+		public function deleteSecureState(): void
+		{
+			unset(
+				$this->secureState
+			);
+		}
 		
 		/**
-		 * @return DomainHostname|null
+		 * @param SecureConnectionState|null $secureState
 		 */
-		public final function getDomainName(): ?DomainHostname
+		public final function setSecureState(
+			?SecureConnectionState $secureState
+		): void
 		{
-			return $this->domainName;
+			$this->secureState = $secureState;
+		}
+		
+		/**
+		 * @return Domain|null
+		 */
+		public final function getDomain(): ?Domain
+		{
+			return $this->domain;
 		}
 	
 		/**
-		 * @param DomainHostname|null $domainName
+		 * @param Domain|null $domain
+		 * @return void
 		 */
-		public final function setDomainName(
-			?DomainHostname $domainName
+		public final function setDomain(
+			?Domain $domain
 		): void
 		{
-			$this->domainName = $domainName;
+			$this->domain = $domain;
+		}
+	
+		/**
+		 * @return void
+		 */
+		public function deleteDomain(): void
+		{
+			unset(
+				$this->domain
+			);
+		}
+		
+		/**
+		 * @return bool
+		 */
+		public function isDomainNull(): bool
+		{
+			return is_null(
+				$this->domain
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public function isDomainSet(): bool
+		{
+			return isset(
+				$this->domain
+			);
 		}
 		
 		/**
@@ -134,7 +220,46 @@
 			return $this->port;
 		}
 		
+		/**
+		 * @param int|null $port
+		 */
+		public final function setPort(
+			?int $port
+		): void
+		{
+			$this->port = $port;
+		}
 	
+		/**
+		 * @return bool
+		 */
+		public function isPortNull(): bool
+		{
+			return is_null(
+				$this->port
+			);
+		}
+		
+		/**
+		 * @return bool
+		 */
+		public function isPortSet(): bool
+		{
+			return isset(
+				$this->port
+			);
+		}
+	
+		/**
+		 * @return void
+		 */
+		public function deletePort(): void
+		{
+			unset(
+				$this->port
+			);
+		}
+		
 		/**
 		 * @return LinkScheme|null
 		 */
@@ -152,29 +277,32 @@
 		{
 			$this->scheme = $scheme;
 		}
+	
+		/**
+		 * @return bool
+		 */
+		public function isSchemeNull(): bool
+		{
+			return is_null(
+				$this->scheme
+			);
+		}
+
+		public function deleteScheme(): void
+		{
+			unset($this->scheme);
+		}
 		
-	
 		/**
-		 * @param int|null $port
+		 * @return bool
 		 */
-		public final function setPort(
-			?int $port
-		): void
+		public function isSchemeSet(): bool
 		{
-			$this->port = $port;
+			return isset(
+				$this->scheme
+			);
 		}
-	
-		/**
-		 * @param SecureConnectionState|null $secureState
-		 */
-		public final function setSecureState(
-			?SecureConnectionState $secureState
-		): void
-		{
-			$this->secureState = $secureState;
-		}
-
-
+		
         /**
          * @return string|null
          */

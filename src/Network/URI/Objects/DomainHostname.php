@@ -12,19 +12,14 @@
     {
         //
 		/**
-		 *
+		 * @param string|null $hostname
 		 */
         function __construct(
-            ?string $hostname,
-            ?DomainTLD $tld
+            ?string $hostname
         )
         {
             $this->setHostname(
                 $hostname
-            );
-
-            $this->setTld(
-                $tld
             );
         }
 	
@@ -33,17 +28,15 @@
 		 */
         function __destruct()
         {
-            unset(
-                $this->hostname
-            );
-            unset(
-                $this->tld
-            );
+			if( $this->isHostnameSet() )
+			{
+				$this->deleteHostname();
+			}
         }
 		
 		// Variables
 		private ?string $hostname = null;
-        private ?DomainTLD $tld = null;
+		
 		
 	
 		// Accessors
@@ -84,24 +77,17 @@
                 $this->hostname
             );
         }
-
-        /**
-         * @return DomainTLD|null
-         */
-        public function getTld(): ?DomainTLD
-        {
-            return $this->tld;
-        }
-
-        /**
-         * @param DomainTLD|null $tld
-         */
-        public function setTld(
-            ?DomainTLD $tld
-        ): void
-        {
-            $this->tld = $tld;
-        }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteHostname(): void
+		{
+			unset(
+				$this->hostname
+			);
+		}
+		
 
         /**
          * @return string|null
