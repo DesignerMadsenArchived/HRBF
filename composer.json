@@ -27,12 +27,7 @@
 
             "IOJaegers\\HRBF\\Math\\": "src/Math/",
             "IOJaegers\\HRBF\\Network\\": "src/Network/"
-        },
-
-        "exclude-from-classmap":
-        [
-            "tests/"
-        ]
+        }
     },
 
     "authors":
@@ -56,7 +51,7 @@
     {
         "psr-4":
         {
-            "IOJaegers\\HRBF\\Tests\\": "tests/"
+            "IOJaegers\\Development\\Tests\\HRBF\\": "tests/"
         }
     },
 
@@ -67,12 +62,13 @@
 
     "scripts":
     {
-        "test-library": "IOJaegers\\HRBF\\Tests\\TestLibrary::main"
+
     },
 
     "support":
     {
         "email": "support@cloud.iojaegers.com",
+
         "issues": "https://github.com/IO-Jaegers/HRBF/issues",
         "source": "https://github.com/IO-Jaegers/HRBF",
         "wiki": "https://github.com/IO-Jaegers/HRBF/wiki"
@@ -82,5 +78,9 @@
 
     "minimum-stability": "dev",
     "prefer-stable": false,
-    "repository": "https://github.com/IO-Jaegers/HRBF"
+    "repository": "https://github.com/IO-Jaegers/HRBF",
+    "require-dev":
+    {
+        "phpunit/phpunit": "*"
+    }
 }

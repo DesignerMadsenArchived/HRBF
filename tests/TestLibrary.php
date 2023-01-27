@@ -2,7 +2,7 @@
     /**
      *
      */
-    namespace IOJaegers\HRBF\Tests;
+	namespace Tests\IOJaegers\HRBF;
 
 
     /**

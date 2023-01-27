@@ -5,7 +5,9 @@
     namespace IOJaegers\HRBF\Network\URI\Factories;
 
 
-    /**
+    use IOJaegers\HRBF\Objects\Map;
+
+	/**
      *
      */
     class TLDFactory
@@ -15,9 +17,9 @@
          */
         public function __construct()
         {
-            $this->setMap(
-                array()
-            );
+			$this->setMap(
+				new Map()
+			);
         }
 
         /**
@@ -37,15 +39,18 @@
         /**
          * @return array|null
          */
-        public final function getMap(): ?array
+        public final function getMap(): ?Map
         {
             return $this->map;
         }
-
-        /**
-         * @param array|null $map
-         */
-        public final function setMap( ?array $map ): void
+	
+		/**
+		 * @param Map|null $map
+		 * @return void
+		 */
+        public final function setMap(
+			?Map $map
+		): void
         {
             $this->map = $map;
         }
@@ -59,23 +64,6 @@
 				$this->map
 			);
 		}
-
-        /**
-         * @param string $key
-         * @return bool
-         */
-        public final function hasMapKey( string $key ): bool
-        {
-            if( $this->isMapNull() )
-            {
-                return false;
-            }
-
-            return array_key_exists(
-                $key,
-                $this->map
-            );
-        }
 
         /**
          * @return bool
