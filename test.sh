@@ -1,3 +1,2 @@
 #/usr/bin/bash
-
-composer install
+bash startup.sh
