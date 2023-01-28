@@ -1,6 +1,8 @@
 # Human Readable Basic Functions
 ## Introduction
-### status  [![PHP Composer](https://github.com/IO-Jaegers/HRBF/actions/workflows/php.yml/badge.svg)](https://github.com/IO-Jaegers/HRBF/actions/workflows/php.yml)
+### status 
+
+[![PHP Composer](https://github.com/IO-Jaegers/HRBF/actions/workflows/php.yml/badge.svg)](https://github.com/IO-Jaegers/HRBF/actions/workflows/php.yml)
 
 ### Codescene
 
