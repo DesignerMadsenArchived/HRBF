@@ -17,7 +17,7 @@
 The current codes status, as its being implemented.
 
 ## Content
-1. [Introduction](readme.md)
+1. [Introduction](Readme.md)
 2. [License](License.md)
 
 
