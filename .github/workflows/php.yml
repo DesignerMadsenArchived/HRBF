@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: install composer application
-        run: composer install
+        run: bash startup.sh
 
       - name: Validate composer.json and composer.lock
         run: composer validate --no-check-all

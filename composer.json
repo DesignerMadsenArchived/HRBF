@@ -78,7 +78,7 @@
 
     "minimum-stability": "dev",
     "prefer-stable": false,
-    "repository": "https://github.com/IO-Jaegers/HRBF",
+    
     "require-dev":
     {
         "phpunit/phpunit": "*"
