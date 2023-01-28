@@ -19,12 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: install composer application
-        run: bash startup.sh
-
-      - name: Validate composer.json and composer.lock
-        run: composer validate --no-check-all
-
       - name: Cache Composer packages
         id: composer-cache
         uses: actions/cache@v3
@@ -34,8 +28,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
-
-      - name: test
-        run: composer test
+      - name: install and validate the composer packages and run PHPUnit tests.
+        run: sh test.sh
