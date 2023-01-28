@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\HRBF\Network\URI\Objects;
+    namespace IOJaegers\HRBF\Network\URI\Objects\Domain;
 
 
 	/**
@@ -36,7 +36,6 @@
 		
 		// Variables
 		private ?string $hostname = null;
-		
 		
 	
 		// Accessors

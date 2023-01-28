@@ -3,8 +3,7 @@
 	 *
 	 */
     namespace IOJaegers\HRBF\Network\URI\Singletons;
-
-
+	
 	use IOJaegers\HRBF\Network\URI\Factories\DomainFactory;
 
 
@@ -31,34 +30,45 @@
 
 
         // Variable
-        private static DomainFactory|null $domainFactory = null;
+		/**
+		 * @var DomainFactory|null
+		 */
+        private static ?DomainFactory $domainFactory = null;
 
+		
         // Accessors
-        /**
-         * @return DomainFactory|null
-         */
-        public static function getDomainFactory(): DomainFactory
+		/**
+		 * @return DomainFactory
+		 */
+        public static function getFactory(): DomainFactory
         {
-            if(
-                is_null(
-                    self::$domainFactory
-                )
-            )
+            if( self::isFactoryNull() )
             {
                 self::$domainFactory = new DomainFactory();
             }
 
             return self::$domainFactory;
         }
-
-        /**
-         * @param DomainFactory|null $domainFactory
-         */
-        public static function setDomainFactory(
+	
+		/**
+		 * @param DomainFactory|null $domainFactory
+		 * @return void
+		 */
+        public static function setFactory(
             ?DomainFactory $domainFactory
         ): void
         {
             self::$domainFactory = $domainFactory;
         }
+	
+		/**
+		 * @return bool
+		 */
+		public static function isFactoryNull(): bool
+		{
+			return is_null(
+				self::$domainFactory
+			);
+		}
 	}
 ?>

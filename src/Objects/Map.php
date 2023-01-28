@@ -59,6 +59,11 @@
 			return $rV;
 		}
 		
+		/**
+		 * @param string $entryKey
+		 * @param $value
+		 * @return void
+		 */
 		public function addEntry(
 			string $entryKey,
 			$value
@@ -66,24 +71,41 @@
 		{
 			if( !$this->hasKey( $value ) )
 			{
-				$list = $this->getList();
-				$list += [$entryKey => $value];
+				$toBeInserted = array(
+					$entryKey => $value
+				);
+				
+				
+				$this->list = array_merge(
+					$this->list,
+					$toBeInserted
+				);
 			}
 		}
 		
+		/**
+		 * @param string $key
+		 * @return mixed
+		 */
 		public function getEntry(
 			string $key
 		): mixed
 		{
-			return $this->getList()[$key];
+			return
+				$this->getList()
+				[ $key ];
 		}
 		
+		/**
+		 * @param string $key
+		 * @return void
+		 */
 		public function deleteEntry(
 			string $key
 		): void
 		{
 			unset(
-				$this->getList()[ $key ]
+				$this->list[ $key ]
 			);
 		}
 		
@@ -104,6 +126,21 @@
 		): void
 		{
 			$this->list = $list;
+		}
+		
+		/**
+		 * @return int|null
+		 */
+		public final function size(): ?int
+		{
+			if( $this->isListNull() )
+			{
+				return null;
+			}
+			
+			return count(
+				$this->getList()
+			);
 		}
 		
 		/**

@@ -4,7 +4,11 @@
 	 */
     namespace IOJaegers\HRBF\Network\URI\Objects;
 
-
+	// Packages
+	use IOJaegers\HRBF\Network\URI\Objects\Domain\DomainHostname;
+	use IOJaegers\HRBF\Network\URI\Objects\Domain\DomainTLD;
+	
+	
 	/**
 	 *
 	 */
@@ -51,11 +55,22 @@
 
 		
 		// Variables
+		/**
+		 * @var SubdomainList|null
+		 */
         private ?SubdomainList $subdomains = null;
-
+	
+		/**
+		 * @var DomainHostname|null
+		 */
 		private ?DomainHostname $name = null;
-		
+	
+		/**
+		 * @var DomainTLD|null
+		 */
         private ?DomainTLD $tld = null;
+		
+		private const minus_one = -1;
 
 
         // Accessors
@@ -210,10 +225,11 @@
 		{
 			if( $this->isNameSet() )
 			{
-				return $this->getSubdomains()->length();
+				return $this->getSubdomains()
+							->length();
 			}
 			
-			return -1;
+			return self::minus_one;
 		}
 	}
 ?>

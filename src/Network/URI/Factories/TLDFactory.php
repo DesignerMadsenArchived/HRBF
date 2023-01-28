@@ -3,10 +3,10 @@
      *
      */
     namespace IOJaegers\HRBF\Network\URI\Factories;
-
-
+	
     use IOJaegers\HRBF\Objects\Map;
 
+	
 	/**
      *
      */
@@ -21,10 +21,10 @@
 				new Map()
 			);
         }
-
-        /**
-         * @return void
-         */
+	
+		/**
+		 * @return void
+		 */
         public function __deconstruct()
         {
             if( $this->isMapSet() )

@@ -57,8 +57,19 @@
 
 
 		// Variables
+		/**
+		 * @var string|null
+		 */
 		private ?string $path = null;
+		
+		/**
+		 * @var string|null
+		 */
 		private ?string $query = null;
+		
+		/**
+		 * @var string|null
+		 */
 		private ?string $fragment = null;
 
 	

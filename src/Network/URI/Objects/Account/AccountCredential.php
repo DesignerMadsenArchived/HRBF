@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\HRBF\Network\URI\Account;
+    namespace IOJaegers\HRBF\Network\URI\Objects\Account;
 
 
 	/**
@@ -19,8 +19,13 @@
 			?string $password = null
 		)
         {
-			$this->setUsername( $username );
-			$this->setPassword( $password );
+			$this->setUsername(
+				$username
+			);
+			
+			$this->setPassword(
+				$password
+			);
         }
 	
 		/**
@@ -30,6 +35,7 @@
         {
 
         }
+		
 		
 		// Variables
 		private ?string $username = null;
@@ -93,6 +99,26 @@
                 $this->password
             );
 		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isPasswordSet(): bool
+		{
+			return isset(
+				$this->password
+			);
+		}
 		
+	
+		/**
+		 * @return bool
+		 */
+		public final function isUsernameSet(): bool
+		{
+			return isset(
+				$this->username
+			);
+		}
 	}
 ?>
