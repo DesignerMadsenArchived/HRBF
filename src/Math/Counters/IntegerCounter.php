@@ -18,7 +18,9 @@
 			int $value = self::zero
 		)
         {
-            $this->setValue( $value );
+            $this->setValue(
+				$value
+			);
         }
 
         // Variable
@@ -39,7 +41,9 @@
 			mixed $withValue
 		): void
 		{
-			$this->decrease( $withValue );
+			$this->decrease(
+				$withValue
+			);
 		}
 	
 		/**
@@ -58,7 +62,9 @@
 			mixed $withValue
 		): void
 		{
-			$this->increase( $withValue );
+			$this->increase(
+				$withValue
+			);
 		}
 	
 		/**
@@ -69,7 +75,9 @@
 			mixed $withValue
 		): void
 		{
-			$this->setValue( $withValue );
+			$this->setValue(
+				$withValue
+			);
 		}
 	
 		// Accessor
@@ -96,7 +104,9 @@
          */
         public final function increment(): void
         {
-            $this->increase( self::one );
+            $this->increase(
+				self::one
+			);
         }
 
         /**
@@ -107,7 +117,9 @@
 			int $value
 		): void
         {
-            $this->setValue( $this->getValue() + $value );
+            $this->setValue(
+				$this->getValue() + $value
+			);
         }
 
         /**
@@ -115,7 +127,9 @@
          */
         public final function decrement(): void
         {
-            $this->decrease( self::one );
+            $this->decrease(
+				self::one
+			);
         }
 
         /**
@@ -126,7 +140,37 @@
 			int $withValue
 		): void
         {
-            $this->setValue($this->getValue() - $withValue );
+            $this->setValue(
+				$this->getValue() - $withValue
+			);
         }
-    }
+	
+		/**
+		 * @return bool
+		 */
+		public function isCounterZero(): bool
+		{
+			return $this->getValue() == self::zero;
+		}
+	
+		/**
+		 * @param mixed $v
+		 * @return bool
+		 */
+		public function isCounterEqualTo(
+			mixed $v
+		): bool
+		{
+			$r = false;
+			
+			if(
+				is_integer( $v )
+			)
+			{
+				$r = ( $this->getValue() == $v );
+			}
+			
+			return $r;
+		}
+	}
 ?>

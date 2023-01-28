@@ -210,7 +210,8 @@
 		{
 			if( $this->isNameSet() )
 			{
-				return $this->getSubdomains()->length();
+				return $this->getSubdomains()
+							->length();
 			}
 			
 			return -1;

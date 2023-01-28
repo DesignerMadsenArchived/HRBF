@@ -1,4 +1,7 @@
 <?php
+	/**
+	 *
+	 */
 	namespace IOJaegers\HRBF\Network\URI\States;
 	
 	
@@ -16,6 +19,11 @@
 		 *
 		 */
 		case UNSECURE;
+		
+		/**
+		 *
+		 */
+		case UNSUPPORTED;
 		
 		/**
 		 *

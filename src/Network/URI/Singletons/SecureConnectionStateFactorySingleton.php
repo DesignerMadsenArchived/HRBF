@@ -4,7 +4,6 @@
 	 */
     namespace IOJaegers\HRBF\Network\URI\Singletons;
 
-
 	use IOJaegers\HRBF\Network\URI\Factories\SecureConnectionStateFactory;
 
 
@@ -30,20 +29,19 @@
         }
 
         // Variables
+		/**
+		 * @var SecureConnectionStateFactory|null
+		 */
         private Static ?SecureConnectionStateFactory $stateFactory = null;
 
 
         // Accessors
-        /**
-         * @return SecureConnectionStateFactory|null
-         */
+		/**
+		 * @return SecureConnectionStateFactory
+		 */
         public final static function getStateFactory(): SecureConnectionStateFactory
         {
-            if(
-                is_null(
-                    self::$stateFactory
-                )
-            )
+            if( self::isFactoryNull() )
             {
                 self::$stateFactory = new SecureConnectionStateFactory();
             }
@@ -60,5 +58,15 @@
         {
             self::$stateFactory = $stateFactory;
         }
+	
+		/**
+		 * @return bool
+		 */
+		public static function isFactoryNull(): bool
+		{
+			return is_null(
+				self::$stateFactory
+			);
+		}
 	}
 ?>

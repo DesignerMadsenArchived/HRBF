@@ -18,7 +18,9 @@
             ?string $tld = null
         )
         {
-            $this->setTld( $tld );
+            $this->setTld(
+				$tld
+			);
         }
 	
 		/**
@@ -92,7 +94,9 @@
          */
         public final function toString(): ?string
         {
-            if( $this->isTldSet() )
+            if(
+				$this->isTldSet()
+			)
             {
                 return $this->tld;
             }

@@ -3,8 +3,11 @@
 	 *
 	 */
     namespace IoJaegers\HRBF\Network\URI\Objects;
-
-
+	
+	// Packages
+	use IOJaegers\HRBF\Math\Counters\IntegerCounter;
+	
+	
 	/**
 	 *
 	 */
@@ -101,7 +104,7 @@
         {
             if( $this->isSubdomainsNull() )
             {
-                return -1;
+                return self::minusOne;
             }
 
             return count(
@@ -112,10 +115,13 @@
 		
 		// Variables
 		private ?array $subdomains = null;
+		
         private const zero = 0;
         private const one = 1;
+		private const minusOne = -1;
 
         private const separator = '.';
+		
         private const emptyString = '';
 
 	
@@ -177,18 +183,25 @@
             {
                 return self::emptyString;
             }
+			
+			$index = null;
 
             $retStr = self::emptyString;
             $size = $this->length();
             $lastEntry = $this->length() - self::one;
 
-            for( $idx = self::zero;
-                 $idx < $size;
-                 $idx ++ )
+			
+            for(
+				$index = new IntegerCounter();
+				$index < $size;
+				$index->increment()
+			)
             {
-                $current = $this->retrieve( $idx );
+                $current = $this->retrieve(
+					$index->getValue()
+				);
 
-                if( $idx == self::zero )
+                if( $index->isCounterZero() )
                 {
                     $retStr = $retStr .
                               $this->toStringStart(
@@ -197,7 +210,7 @@
                 }
                 else
                 {
-                    if( $idx == $lastEntry )
+                    if( $index->isCounterEqualTo( $lastEntry ) )
                     {
                         $retStr = $retStr .
                             $this->toStringLast(

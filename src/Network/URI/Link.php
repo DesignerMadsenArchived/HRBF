@@ -74,16 +74,32 @@
 		
 		
 		// Variables
+		/**
+		 * @var LinkScheme|null
+		 */
 		private ?LinkScheme $scheme = null;
-		
+	
+		/**
+		 * @var SecureConnectionState|null
+		 */
 		private ?SecureConnectionState $secureState = null;
-		
+	
+		/**
+		 * @var Domain|null
+		 */
 		private ?Domain $domain = null;
-		
+	
+		/**
+		 * @var int|null
+		 */
 		private ?int $port = null;
-		
+	
+		/**
+		 * @var AccountCredential|null
+		 */
 		private ?AccountCredential $credentials = null;
 	
+		
 		
 		// Accessors
 		/**
@@ -103,8 +119,11 @@
 		{
 			$this->credentials = $credentials;
 		}
-		
-		public function deleteCredentials(): void
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteCredentials(): void
 		{
 			unset(
 				$this->Credentials
@@ -114,7 +133,7 @@
 		/**
 		 * @return bool
 		 */
-		public function isCredentialsNull(): bool
+		public final function isCredentialsNull(): bool
 		{
 			return is_null(
 				$this->credentials
@@ -124,7 +143,7 @@
 		/**
 		 * @return bool
 		 */
-		public function isCredentialsSet(): bool
+		public final function isCredentialsSet(): bool
 		{
 			return isset(
 				$this->Credentials
@@ -138,15 +157,21 @@
 		{
 			return $this->secureState;
 		}
-		
+	
+		/**
+		 * @return bool
+		 */
 		public final function isSecureStateSet(): bool
 		{
 			return isset(
 				$this->secureState
 			);
 		}
-
-		public function deleteSecureState(): void
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteSecureState(): void
 		{
 			unset(
 				$this->secureState
@@ -185,7 +210,7 @@
 		/**
 		 * @return void
 		 */
-		public function deleteDomain(): void
+		public final function deleteDomain(): void
 		{
 			unset(
 				$this->domain
@@ -195,7 +220,7 @@
 		/**
 		 * @return bool
 		 */
-		public function isDomainNull(): bool
+		public final function isDomainNull(): bool
 		{
 			return is_null(
 				$this->domain
@@ -205,7 +230,7 @@
 		/**
 		 * @return bool
 		 */
-		public function isDomainSet(): bool
+		public final function isDomainSet(): bool
 		{
 			return isset(
 				$this->domain
@@ -233,7 +258,7 @@
 		/**
 		 * @return bool
 		 */
-		public function isPortNull(): bool
+		public final function isPortNull(): bool
 		{
 			return is_null(
 				$this->port
@@ -243,7 +268,7 @@
 		/**
 		 * @return bool
 		 */
-		public function isPortSet(): bool
+		public final function isPortSet(): bool
 		{
 			return isset(
 				$this->port
@@ -253,7 +278,7 @@
 		/**
 		 * @return void
 		 */
-		public function deletePort(): void
+		public final function deletePort(): void
 		{
 			unset(
 				$this->port
@@ -281,22 +306,27 @@
 		/**
 		 * @return bool
 		 */
-		public function isSchemeNull(): bool
+		public final function isSchemeNull(): bool
 		{
 			return is_null(
 				$this->scheme
 			);
 		}
-
-		public function deleteScheme(): void
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteScheme(): void
 		{
-			unset($this->scheme);
+			unset(
+				$this->scheme
+			);
 		}
 		
 		/**
 		 * @return bool
 		 */
-		public function isSchemeSet(): bool
+		public final function isSchemeSet(): bool
 		{
 			return isset(
 				$this->scheme
@@ -306,7 +336,7 @@
         /**
          * @return string|null
          */
-        public function toString(): ?string
+        public final function toString(): ?string
         {
             return null;
         }

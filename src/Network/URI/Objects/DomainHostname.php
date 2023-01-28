@@ -37,7 +37,6 @@
 		// Variables
 		private ?string $hostname = null;
 		
-		
 	
 		// Accessors
 		/**

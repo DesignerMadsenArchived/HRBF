@@ -21,10 +21,10 @@
 				new Map()
 			);
         }
-
-        /**
-         * @return void
-         */
+	
+		/**
+		 * @return void
+		 */
         public function __deconstruct()
         {
             if( $this->isMapSet() )
