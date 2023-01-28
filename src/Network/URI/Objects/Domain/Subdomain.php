@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-    namespace IOJaegers\HRBF\Network\URI\Objects;
+    namespace IOJaegers\HRBF\Network\URI\Objects\Domain;
 
 
 	/**
@@ -11,7 +11,7 @@
     class Subdomain
     {
 		/**
-		 *
+		 * @param string|null $domain
 		 */
         function __construct(
 			?string $domain = null
@@ -27,9 +27,10 @@
 		 */
         function __destruct()
         {
-            unset(
-                $this->location
-            );
+			if( $this->isLocationSet() )
+			{
+				$this->deleteLocation();
+			}
         }
 		
 		
@@ -43,6 +44,16 @@
 		public final function getLocation(): ?string
 		{
 			return $this->location;
+		}
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteLocation(): void
+		{
+			unset(
+				$this->location
+			);
 		}
 		
 		/**
@@ -73,7 +84,9 @@
          */
         public final function isLocationNull(): bool
         {
-            return is_null($this->location);
+            return is_null(
+				$this->location
+			);
         }
 
         /**
@@ -81,7 +94,9 @@
          */
         public final function isLocationSet(): bool
         {
-            return isset($this->location);
+            return isset(
+				$this->location
+			);
         }
 	}
 ?>

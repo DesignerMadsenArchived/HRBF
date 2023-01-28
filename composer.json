@@ -26,13 +26,8 @@
             "IOJaegers\\HRBF\\Types\\": "src/Types/",
 
             "IOJaegers\\HRBF\\Math\\": "src/Math/",
-            "IoJaegers\\HRBF\\Network\\": "src/Network/"
-        },
-
-        "exclude-from-classmap":
-        [
-            "tests/"
-        ]
+            "IOJaegers\\HRBF\\Network\\": "src/Network/"
+        }
     },
 
     "authors":
@@ -52,6 +47,14 @@
         "ext-intl": "*"
     },
 
+    "autoload-dev":
+    {
+        "psr-4":
+        {
+            "IOJaegers\\Development\\Tests\\HRBF\\": "tests/"
+        }
+    },
+
     "suggest":
     {
 
@@ -65,6 +68,7 @@
     "support":
     {
         "email": "support@cloud.iojaegers.com",
+
         "issues": "https://github.com/IO-Jaegers/HRBF/issues",
         "source": "https://github.com/IO-Jaegers/HRBF",
         "wiki": "https://github.com/IO-Jaegers/HRBF/wiki"
@@ -74,13 +78,9 @@
 
     "minimum-stability": "dev",
     "prefer-stable": false,
-    "repository": "https://github.com/IO-Jaegers/HRBF",
 
-    "autoload-dev":
+    "require-dev":
     {
-        "psr-4":
-        {
-            "IOJaegers\\HRBF\\Tests\\": "tests/"
-        }
+        "phpunit/phpunit": "*"
     }
 }

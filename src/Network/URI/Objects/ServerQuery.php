@@ -39,23 +39,37 @@
 		 */
         function __destruct()
         {
-            unset(
-                $this->path
-            );
+			if( $this->isPathSet() )
+			{
+				$this->deletePath();
+			}
+			
+			if( $this->isFragmentSet() )
+			{
+				$this->deleteFragment();
+			}
 
-            unset(
-                $this->fragment
-            );
-
-            unset(
-                $this->query
-            );
+			if( $this->isQuerySet() )
+			{
+				$this->deleteQuery();
+			}
         }
 
 
 		// Variables
+		/**
+		 * @var string|null
+		 */
 		private ?string $path = null;
+		
+		/**
+		 * @var string|null
+		 */
 		private ?string $query = null;
+		
+		/**
+		 * @var string|null
+		 */
 		private ?string $fragment = null;
 
 	
@@ -63,31 +77,15 @@
 		/**
 		 * @return string|null
 		 */
-		public function getFragment(): ?string
+		public final function getFragment(): ?string
 		{
 			return $this->fragment;
 		}
 	
 		/**
-		 * @return string|null
-		 */
-		public function getPath(): ?string
-		{
-			return $this->path;
-		}
-	
-		/**
-		 * @return string|null
-		 */
-		public function getQuery(): ?string
-		{
-			return $this->query;
-		}
-	
-		/**
 		 * @param string|null $fragment
 		 */
-		public function setFragment(
+		public final function setFragment(
 			?string $fragment
 		): void
 		{
@@ -95,23 +93,123 @@
 		}
 	
 		/**
+		 * @return void
+		 */
+		public final function deleteFragment(): void
+		{
+			unset(
+				$this->fragment
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isFragmentNull(): bool
+		{
+			return is_null(
+				$this->fragment
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isFragmentSet(): bool
+		{
+			return isset(
+				$this->fragment
+			);
+		}
+	
+		/**
+		 * @return string|null
+		 */
+		public final function getPath(): ?string
+		{
+			return $this->path;
+		}
+	
+		/**
 		 * @param string|null $path
 		 */
-		public function setPath(
+		public final function setPath(
 			?string $path
 		): void
 		{
 			$this->path = $path;
 		}
+		
+		public final function deletePath(): void
+		{
+			unset(
+				$this->path
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isPathNull(): bool
+		{
+			return is_null(
+				$this->path
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isPathSet(): bool
+		{
+			return isset(
+				$this->path
+			);
+		}
+	
+		/**
+		 * @return string|null
+		 */
+		public final function getQuery(): ?string
+		{
+			return $this->query;
+		}
 	
 		/**
 		 * @param string|null $query
 		 */
-		public function setQuery(
+		public final function setQuery(
 			?string $query
 		): void
 		{
 			$this->query = $query;
+		}
+		
+		public final function deleteQuery(): void
+		{
+			unset(
+				$this->query
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isQueryNull(): bool
+		{
+			return is_null(
+				$this->query
+			);
+		}
+	
+		/**
+		 * @return bool
+		 */
+		public final function isQuerySet(): bool
+		{
+			return isset(
+				$this->query
+			);
 		}
 	}
 ?>

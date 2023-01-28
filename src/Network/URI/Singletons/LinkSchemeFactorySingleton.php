@@ -1,6 +1,10 @@
 <?php
+	/**
+	 *
+	 */
 	namespace IOJaegers\HRBF\Network\URI\Singletons;
 	
+	// Packages
 	use IOJaegers\HRBF\Network\URI\Factories\LinkSchemeFactory;
 
 
@@ -25,6 +29,9 @@
 		
 		}
 		
+		/**
+		 * @var LinkSchemeFactory|null
+		 */
 		private static ?LinkSchemeFactory $factory = null;
 		
 		
@@ -33,11 +40,7 @@
 		 */
 		public static function getFactory(): ?LinkSchemeFactory
 		{
-			if(
-				is_null(
-					self::$factory
-				)
-			)
+			if( self::isFactoryNull() )
 			{
 				self::setFactory(
 					new LinkSchemeFactory()
@@ -56,6 +59,16 @@
 		): void
 		{
 			self::$factory = $factory;
+		}
+		
+		/**
+		 * @return bool
+		 */
+		public static function isFactoryNull(): bool
+		{
+			return is_null(
+				self::$factory
+			);
 		}
 	}
 ?>

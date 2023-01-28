@@ -49,5 +49,8 @@
 		public function setCounterValue(
 			mixed $withValue
 		);
+		
+		public function isCounterZero(): bool;
+		public function isCounterEqualTo( mixed $v ): bool;
 	}
 ?>

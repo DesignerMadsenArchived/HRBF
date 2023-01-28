@@ -3,8 +3,12 @@
 	 *
 	 */
     namespace IoJaegers\HRBF\Network\URI\Objects;
-
-
+	
+	// Packages
+	use IOJaegers\HRBF\Math\Counters\IntegerCounter;
+	use IOJaegers\HRBF\Network\URI\Objects\Domain\Subdomain;
+	
+	
 	/**
 	 *
 	 */
@@ -25,10 +29,12 @@
          */
         function __destruct()
         {
-            unset(
-                $this->subdomains
-            );
+			if( $this->isSubdomainsSet() )
+			{
+				$this->deleteSubdomains();
+			}
         }
+		
 
         /**
          * @param int $indexPosition
@@ -87,8 +93,8 @@
             if( isset( $from ) &&
                 isset( $to ) )
             {
-                $this->getSubdomains()[$toInIndex] = $from;
-                $this->getSubdomains()[$fromInIndex] = $to;
+                $this->getSubdomains()[ $toInIndex ] = $from;
+                $this->getSubdomains()[ $fromInIndex ] = $to;
             }
         }
 
@@ -99,7 +105,7 @@
         {
             if( $this->isSubdomainsNull() )
             {
-                return -1;
+                return self::minusOne;
             }
 
             return count(
@@ -110,10 +116,13 @@
 		
 		// Variables
 		private ?array $subdomains = null;
+		
         private const zero = 0;
         private const one = 1;
+		private const minusOne = -1;
 
         private const separator = '.';
+		
         private const emptyString = '';
 
 	
@@ -129,7 +138,9 @@
 		/**
 		 * @param array|null $subdomains
 		 */
-		public final function setSubdomains( ?array $subdomains ): void
+		public final function setSubdomains(
+			?array $subdomains
+		): void
 		{
 			$this->subdomains = $subdomains;
 		}
@@ -137,7 +148,7 @@
         /**
          * @return bool
          */
-        public function isSubdomainsNull(): bool
+        public final function isSubdomainsNull(): bool
         {
             return is_null(
                 $this->subdomains
@@ -147,34 +158,51 @@
         /**
          * @return bool
          */
-        public function isSubdomainsSet(): bool
+        public final function isSubdomainsSet(): bool
         {
             return isset(
                 $this->subdomains
             );
         }
+	
+		/**
+		 * @return void
+		 */
+		public final function deleteSubdomains(): void
+		{
+			unset(
+				$this->subdomains
+			);
+		}
 
         /**
          * @return string
          */
-        public function toString(): string
+        public final function toString(): string
         {
             if( $this->length() == self::zero )
             {
                 return self::emptyString;
             }
+			
+			$index = null;
 
             $retStr = self::emptyString;
             $size = $this->length();
             $lastEntry = $this->length() - self::one;
 
-            for( $idx = self::zero;
-                 $idx < $size;
-                 $idx ++ )
+			
+            for(
+				$index = new IntegerCounter();
+				$index < $size;
+				$index->increment()
+			)
             {
-                $current = $this->retrieve( $idx );
+                $current = $this->retrieve(
+					$index->getValue()
+				);
 
-                if( $idx == self::zero )
+                if( $index->isCounterZero() )
                 {
                     $retStr = $retStr .
                               $this->toStringStart(
@@ -183,7 +211,7 @@
                 }
                 else
                 {
-                    if( $idx == $lastEntry )
+                    if( $index->isCounterEqualTo( $lastEntry ) )
                     {
                         $retStr = $retStr .
                             $this->toStringLast(
@@ -208,7 +236,9 @@
          * @param $input
          * @return string
          */
-        protected function toStringNormal( $input ): string
+        protected final function toStringNormal(
+			$input
+		): string
         {
             return self::separator . $input;
         }
@@ -217,7 +247,9 @@
          * @param $input
          * @return string
          */
-        protected function toStringStart( $input ): string
+        protected final function toStringStart(
+			$input
+		): string
         {
             return $input;
         }
@@ -226,7 +258,9 @@
          * @param $input
          * @return string
          */
-        protected function toStringLast( $input ): string
+        protected final function toStringLast(
+			$input
+		): string
         {
             return $input;
         }

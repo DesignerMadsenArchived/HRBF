@@ -126,5 +126,17 @@
         {
             $this->setValue($this->getValue() - $withValue );
         }
-    }
+		
+		public function isCounterZero(): bool
+		{
+			// TODO: Implement isCounterZero() method.
+			return false;
+		}
+		
+		public function isCounterEqualTo(mixed $v): bool
+		{
+			// TODO: Implement isCounterEqualTo() method.
+			return false;
+		}
+	}
 ?>
