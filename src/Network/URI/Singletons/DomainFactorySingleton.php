@@ -3,8 +3,7 @@
 	 *
 	 */
     namespace IOJaegers\HRBF\Network\URI\Singletons;
-
-
+	
 	use IOJaegers\HRBF\Network\URI\Factories\DomainFactory;
 
 

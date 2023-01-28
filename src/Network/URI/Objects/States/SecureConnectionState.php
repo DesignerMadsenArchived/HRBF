@@ -2,7 +2,7 @@
 	/**
 	 *
 	 */
-	namespace IOJaegers\HRBF\Network\URI\States;
+	namespace IOJaegers\HRBF\Network\URI\Objects\States;
 	
 	
 	/**

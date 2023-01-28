@@ -3,10 +3,10 @@
      *
      */
     namespace IOJaegers\HRBF\Network\URI\Factories;
-
-
+	
     use IOJaegers\HRBF\Objects\Map;
 
+	
 	/**
      *
      */

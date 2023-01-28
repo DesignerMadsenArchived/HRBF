@@ -6,6 +6,7 @@
 	
 	// Packages
 	use IOJaegers\HRBF\Math\Counters\IntegerCounter;
+	use IOJaegers\HRBF\Network\URI\Objects\Domain\Subdomain;
 	
 	
 	/**

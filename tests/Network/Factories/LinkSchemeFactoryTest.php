@@ -5,8 +5,9 @@
 	namespace IOJaegers\Development\Tests\HRBF\Network\Factories;
 	
 	// Packages used
+	use IOJaegers\HRBF\Network\URI\Objects\States\LinkScheme;
 	use IOJaegers\HRBF\Network\URI\Singletons\LinkSchemeFactorySingleton;
-	use IOJaegers\HRBF\Network\URI\States\LinkScheme;
+	
 	use PHPUnit\Framework\TestCase;
 	
 	
